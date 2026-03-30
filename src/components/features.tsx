@@ -1,7 +1,7 @@
 "use client";
 
 import { Robot, GearSix, Megaphone, ArrowRight } from "@phosphor-icons/react";
-import { FadeIn } from "./fade-in";
+import { ScrollReveal } from "./scroll-reveal";
 
 export function Features() {
   return (
@@ -21,7 +21,7 @@ export function Features() {
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 pt-24 md:pt-32">
         {/* Header */}
-        <FadeIn>
+        <ScrollReveal>
           <div className="mb-16 md:mb-24">
             <span className="inline-block px-3 py-1 mb-6 bg-white/[0.04] text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-foreground border border-white/[0.06]">
               Capabilities&ensp;|&ensp;Intelligence
@@ -36,15 +36,14 @@ export function Features() {
               at scale. Our systems don&apos;t just assist — they decide, act, and adapt.
             </p>
           </div>
-        </FadeIn>
+        </ScrollReveal>
 
         {/* Asymmetric Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 items-stretch">
 
           {/* Card 1: LLM-Powered AI Agents (7-col) */}
-          <FadeIn className="lg:col-span-7">
+          <ScrollReveal className="lg:col-span-7" offset={10}>
             <div className="group relative overflow-hidden rounded-2xl bg-[#111113] p-8 md:p-12 h-full transition-[background-color] duration-500 hover:bg-[#151517]">
-              {/* Corner glow */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/[0.03] rounded-full blur-[80px] -mr-20 -mt-20 pointer-events-none" />
 
               <div className="relative z-10 flex flex-col h-full">
@@ -72,12 +71,11 @@ export function Features() {
                 </div>
               </div>
             </div>
-          </FadeIn>
+          </ScrollReveal>
 
           {/* Card 2: Workflow Automation (5-col) */}
-          <FadeIn delay={0.1} className="lg:col-span-5">
+          <ScrollReveal className="lg:col-span-5" offset={30}>
             <div className="group relative overflow-hidden rounded-2xl bg-[#161618] p-8 md:p-12 h-full transition-[background-color] duration-500 hover:bg-[#1a1a1d]">
-              {/* Image overlay */}
               <div className="absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity duration-700 pointer-events-none">
                 <img
                   src="/topo-lines.png"
@@ -113,13 +111,12 @@ export function Features() {
                 </div>
               </div>
             </div>
-          </FadeIn>
+          </ScrollReveal>
 
           {/* Card 3: AI-Managed Ad Campaigns (Full width) */}
-          <FadeIn delay={0.2} className="lg:col-span-12">
+          <ScrollReveal className="lg:col-span-12" offset={20}>
             <div className="group relative overflow-hidden rounded-2xl bg-[#111113] p-8 md:p-12 transition-[background-color] duration-500 hover:bg-[#151517]">
               <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                {/* Image side */}
                 <div className="md:w-1/2 relative">
                   <div className="absolute inset-0 bg-white/[0.04] blur-[60px] rounded-full pointer-events-none" />
                   <div className="relative rounded-xl overflow-hidden aspect-video border border-white/[0.05]">
@@ -132,7 +129,6 @@ export function Features() {
                   </div>
                 </div>
 
-                {/* Text side */}
                 <div className="md:w-1/2">
                   <div className="mb-8 flex items-center justify-between">
                     <Megaphone size={32} weight="regular" className="text-foreground" />
@@ -158,7 +154,7 @@ export function Features() {
                 </div>
               </div>
             </div>
-          </FadeIn>
+          </ScrollReveal>
         </div>
       </div>
     </section>
