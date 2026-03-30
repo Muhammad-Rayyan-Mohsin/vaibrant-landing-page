@@ -17,6 +17,7 @@ export function CTA() {
               <img
                 src="/topo-lines.png"
                 alt=""
+                loading="lazy"
                 className="h-full w-full object-cover"
               />
             </div>

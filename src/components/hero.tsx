@@ -18,9 +18,10 @@ export function Hero() {
           loop
           muted
           playsInline
+          preload="auto"
           className="h-full w-full object-cover"
         >
-          <source src="/vortex-walk.mp4" type="video/mp4" />
+          <source src="https://jjn46rcnnayepb32.public.blob.vercel-storage.com/vortex-walk.mp4" type="video/mp4" />
         </video>
       </motion.div>
 

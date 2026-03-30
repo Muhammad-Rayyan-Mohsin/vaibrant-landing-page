@@ -41,7 +41,7 @@ export function Navbar() {
       >
         <div className="w-full max-w-3xl">
           {/* Main pill */}
-          <div className="flex items-center justify-center gap-2 w-fit mx-auto rounded-full bg-black/70 backdrop-blur-xl border border-white/[0.08] px-2 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+          <div className="flex items-center justify-center gap-2 w-fit mx-auto rounded-full bg-black/70 backdrop-blur-xl border border-white/[0.08] px-2 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.4)] will-change-transform">
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (

@@ -42,7 +42,7 @@ export function Projects() {
             </div>
             <a
               href="/projects"
-              className="inline-flex items-center gap-2 text-foreground font-medium tracking-widest uppercase text-xs border-b border-foreground pb-2 hover:text-muted hover:border-muted transition-all duration-300 shrink-0"
+              className="inline-flex items-center gap-2 text-foreground font-medium tracking-widest uppercase text-xs border-b border-foreground pb-2 hover:text-muted hover:border-muted transition-colors duration-300 shrink-0"
             >
               View All Projects
               <ArrowRight size={14} weight="bold" />
@@ -60,7 +60,8 @@ export function Projects() {
                   <img
                     alt={project.title}
                     src={project.image}
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-[0.85] transition-all duration-1000"
+                    loading="lazy"
+                    className="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-[0.85] transition-[transform,filter] duration-1000"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
 
@@ -72,7 +73,7 @@ export function Projects() {
                   </div>
 
                   {/* Arrow */}
-                  <div className="absolute bottom-5 right-5 h-10 w-10 border border-white/20 flex items-center justify-center group-hover:bg-foreground group-hover:border-foreground transition-all duration-500">
+                  <div className="absolute bottom-5 right-5 h-10 w-10 border border-white/20 flex items-center justify-center group-hover:bg-foreground group-hover:border-foreground transition-[background-color,border-color] duration-500">
                     <ArrowUpRight
                       size={16}
                       weight="bold"
