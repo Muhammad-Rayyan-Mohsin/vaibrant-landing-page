@@ -5,22 +5,22 @@ import { FadeIn } from "./fade-in";
 
 const projects = [
   {
-    title: "Project Aether",
-    tag: "Industrial LLM",
+    title: "Meta Ads Manager",
+    tag: "Autonomous Ad Ops",
     description:
-      "Challenge: Fragmented operational data across 4 continents. Result: A unified RAG-driven intelligence layer reducing retrieval latency by 84%.",
+      "Challenge: Manual ad management bleeding $2K-$5K/month in agency fees. Result: A full-stack LLM agent with 40+ tools that autonomously creates campaigns, generates creatives, and optimizes spend with real-time ROAS tracking.",
     year: "2024",
-    client: "Nexus Corp",
-    image: "https://picsum.photos/seed/aether-ai/800/500",
+    client: "Internal Platform",
+    image: "/proj-meta-ads.png",
   },
   {
-    title: "Stratis",
-    tag: "Predictive Grid",
+    title: "CAIO Intelligence Platform",
+    tag: "Multi-Agent Dashboard",
     description:
-      "Challenge: Volatile supply chain signal noise. Result: Bespoke forecasting engine achieving 99.2% accuracy in predictive maintenance cycles.",
-    year: "2023",
-    client: "Lumina Systems",
-    image: "https://picsum.photos/seed/stratis-ml/800/500",
+      "Challenge: Disconnected client health signals across support channels. Result: Full-stack intelligence dashboard with specialized LLM agents for ticket analysis, risk reporting, and automated health assessment via real-time streaming.",
+    year: "2024",
+    client: "Enterprise SaaS",
+    image: "/proj-caio.png",
   },
 ];
 
@@ -36,8 +36,8 @@ export function Projects() {
                 Proof of Concept
               </h2>
               <p className="text-muted text-base md:text-lg leading-relaxed">
-                Field-tested implementations of synthetic intelligence across
-                high-stakes industrial environments.
+                Field-tested AI systems deployed across real businesses &mdash;
+                from autonomous ad management to multi-agent intelligence platforms.
               </p>
             </div>
             <a
@@ -62,7 +62,6 @@ export function Projects() {
                     src={project.image}
                     className="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-[0.85] transition-all duration-1000"
                   />
-                  {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
 
                   {/* Tag */}
@@ -72,7 +71,7 @@ export function Projects() {
                     </span>
                   </div>
 
-                  {/* Arrow button */}
+                  {/* Arrow */}
                   <div className="absolute bottom-5 right-5 h-10 w-10 border border-white/20 flex items-center justify-center group-hover:bg-foreground group-hover:border-foreground transition-all duration-500">
                     <ArrowUpRight
                       size={16}

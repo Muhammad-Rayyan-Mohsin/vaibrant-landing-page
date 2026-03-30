@@ -1,70 +1,201 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Database, TreeStructure, Cpu, ShieldCheck } from "@phosphor-icons/react";
+import {
+  ArrowRight,
+  Brain,
+  Robot,
+  ChartLineUp,
+  Envelope,
+  VideoCamera,
+  MagnifyingGlass,
+  ChatCircleDots,
+  ShieldCheck,
+  Heartbeat,
+  TagChevron,
+  Bell,
+  GoogleLogo,
+  GearSix,
+} from "@phosphor-icons/react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { FadeIn } from "@/components/fade-in";
 
-const filters = ["All Systems", "LLM Fine-tuning", "Predictive Models", "Data Infrastructure"];
+const filters = [
+  "All",
+  "AI Agents",
+  "Automation",
+  "Analytics",
+  "Managed Services",
+];
 
 const featured = {
-  title: "Project Aether: Neural Search Engine",
+  title: "Meta Ads Manager",
   description:
-    "Implementing a semantic retrieval system across 40TB of unstructured legal documentation using custom vector embeddings and low-latency inference pipelines.",
+    "Full-stack Facebook/Instagram ad management system powered by an LLM agent with 40+ tools that autonomously creates campaigns, generates ad creatives, analyzes performance metrics, and recommends optimizations through natural language conversation.",
   stats: [
-    { value: "85%", label: "Latency Reduction" },
-    { value: "99.9%", label: "Inference Reliability" },
+    { value: "40+", label: "Agent Tools" },
+    { value: "Real-time", label: "ROAS Analytics" },
   ],
-  tags: ["PyTorch", "Rust", "Kubernetes"],
-  image:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBD2KZ1Y5TBplaKvHMIbCEP1EKu6kEsCkAf_72utuGGHlzcOIF90gpsurD2AXwenDD0OtpKzTWmkErt1RTA-pWm1z0MSRWFaRA1fJAlrot-fjN1Fwgb4Emb8Xe-HBCqtDgR4B8__2LLnSbBTUUvYMO8GsAAvFyTNeQBAo_PEkTK61vxFKBJJzrMmMDmri_dqGEDk09HmJ83oqOZ_BAvELce3fLJKAJhbLOq0oo3-2sVSd84iq2-XpZ0OAYMmnA0Ad7YgBqfb0ZgG_5R",
+  tags: ["LLM Agent", "Meta Graph API", "OAuth", "Redis"],
+  category: "AI Agents",
+  image: "https://picsum.photos/seed/meta-ads-platform/1200/700",
 };
 
 const projects = [
   {
-    icon: Database,
-    title: "Stratis: Predictive Liquidity Model",
-    objective: "Real-time market volatility forecasting for high-frequency trading desks.",
-    outcome: "Achieved sub-10ms prediction windows with 94% accuracy on tail-risk events.",
-    tags: ["TensorFlow", "C++"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAJTiG6nauVxuLesa0FGW8BHe1AJQrif4Ju8sEq23cGWLK_jjImx77XbxwMoyX4rtWF9wIl3yS2FARIZwH7YQ9HIUIGHF-CbWUa6C-XrMikDHECtpHXGFI0VEhqiATdon0ekmQpS_VcNS3Vg8LyBCSvkStmWwipGBG6OauzPTPWwuopqXN4vu8-9FcVx8Lmq7TnIRt19bK_fJAvzBfLW2Dt2q5uY4RNg0aVNcS4k8G_mwBdBfzOR0GXKwCv9BeHZ--kzYxgZF3gKYHy",
+    icon: Envelope,
+    title: "Cold Email Engine",
+    objective:
+      "Multi-step cold email campaign system with context-aware LLM agent for personalized outreach at scale.",
+    outcome:
+      "AI-driven sentiment classification, automated lead scoring (hot/warm/cold), domain health verification (SPF/DKIM/DMARC), 14-day warmup scheduler, and unified inbox — backed by 177 automated tests.",
+    tags: ["LLM Agent", "SMTP/IMAP", "HMAC Tracking"],
+    category: "AI Agents",
+    image: "https://picsum.photos/seed/cold-email-eng/800/500",
   },
   {
-    icon: TreeStructure,
-    title: "Chronos: Data Ingestion Fabric",
-    objective: "Unified data layer for multi-cloud IoT sensor networks.",
-    outcome: "Reduced data siloing by 60% and optimized cloud egress costs by 22%.",
-    tags: ["Apache Kafka", "Go"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDNv3OArciCXMpz6aPlI-Qp5mPwLEQEcIpJ1EW39cl-HJZm5gVTPTeLyZTqZ5unQKQOiCyMqdrHd0WYXJozeiAUuFpyctCmnTuZx3Qpg0aTd1_fYBcZBxj1Zt6w1Ju8ulAUaQyvFoNZseBmplQHwPkwH02-z4MD2ibm9-Q2xAYGHwpv70tHhe4IswFSt4hBBgtUsMNj9uGjLYaV1fAybAMZVHOmOEFlLjgi-npqRm8yZCyq_HtkLgJyZWQOC3CzwYAH8q-iuwub1Qwy",
+    icon: Brain,
+    title: "CAIO Intelligence Platform",
+    objective:
+      "Full-stack intelligence dashboard for client success using multiple specialized LLM agents.",
+    outcome:
+      "Deployed agents for support ticket analysis, client health assessment, and automated risk reporting — with BullMQ worker pipelines, Clerk auth, and real-time response streaming.",
+    tags: ["Mastra AI", "LangGraph", "Next.js 16"],
+    category: "AI Agents",
+    image: "https://picsum.photos/seed/caio-platform/800/500",
   },
   {
-    icon: Cpu,
-    title: "Iris: Visual Inspection AI",
-    objective: "Edge-AI computer vision for semiconductor manufacturing defect detection.",
-    outcome: "Near-zero false negative rate on micro-fracture identification pipelines.",
-    tags: ["OpenCV", "CUDA"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuB74lSc43uMhs0eg8UVLF871etaHnaIRivYRMVYYOgINWAziX1_2Zqb7ZthxnL7wWDjdoZ3SCYq-6Q3JoK0kqqmJF89GkwEGvWvfx8yH0EpLvTjV2CkU1M-uN0KmIjxcr_wDsgpWTJUQxCd5Aqf_ErgYkceeDjrkizjZN1s_nYCeorqwMkJBEefcKb_m283ph2FtEC1tdBiSDnf4hccUQ0k-tJ1rBw7Dhe5DA_xdJqtN5E0HvEqIC14EGl3ca8HqRVH9YhGKztsNnVq",
+    icon: VideoCamera,
+    title: "YT Trends Dashboard",
+    objective:
+      "YouTube trending video discovery platform with keyword search, category/region filtering, and duration segmentation.",
+    outcome:
+      "Integrated LLM agent via OpenRouter for AI-powered trend analysis, content pattern recognition, and actionable insights on viral video performance.",
+    tags: ["YouTube Data API", "OpenRouter", "LLM Agent"],
+    category: "Analytics",
+    image: "https://picsum.photos/seed/yt-trends/800/500",
+  },
+  {
+    icon: MagnifyingGlass,
+    title: "Content Scraping & Search API",
+    objective:
+      "Multi-platform content scraping and semantic search API with Redis job queues and priority scheduling.",
+    outcome:
+      "Vector embedding-based semantic search across TikTok, YouTube, and Reddit — consumed by Mastra AI agents for automated storyboard creation. Gemini AI for video classification.",
+    tags: ["Redis Queues", "Gemini AI", "Bunny CDN"],
+    category: "AI Agents",
+    image: "https://picsum.photos/seed/scrape-search/800/500",
+  },
+  {
+    icon: ChatCircleDots,
+    title: "Discord Intelligence Viewer",
+    objective:
+      "Internal web app for navigating Discord server data with real-time message polling and rich media display.",
+    outcome:
+      "Conversational AI agent ingests full channel context to answer natural language questions about team discussions, surface key topics, and provide source-attributed insights.",
+    tags: ["Next.js 15", "OpenRouter", "Real-time"],
+    category: "Analytics",
+    image: "https://picsum.photos/seed/discord-intel/800/500",
+  },
+  {
+    icon: Bell,
+    title: "Bug Alert Bot",
+    objective:
+      "Discord bot that monitors channels and routes messages through an LLM for autonomous classification.",
+    outcome:
+      "Classifies bugs vs. feature requests vs. general chat, generates severity-tagged reports, stores in Turso DB, and auto-posts formatted alerts to a dedicated error channel.",
+    tags: ["Discord Bot", "LLM Agent", "Turso"],
+    category: "Automation",
+    image: "https://picsum.photos/seed/bug-alert/800/500",
+  },
+  {
+    icon: Heartbeat,
+    title: "Client Intelligence Listener",
+    objective:
+      "Real-time Discord intelligence bot for autonomous client message processing and risk assessment.",
+    outcome:
+      "AI triage with urgency scoring, sentiment classification, churn signal detection, response quality evaluation, and risk radar scoring across 10+ enriched database tables.",
+    tags: ["LLM Agent", "Sentiment AI", "Real-time"],
+    category: "AI Agents",
+    image: "https://picsum.photos/seed/client-listener/800/500",
+  },
+  {
+    icon: TagChevron,
+    title: "Whop Support Classifier",
+    objective:
+      "Whop API poller that fetches support messages and pipes each through an LLM classification agent.",
+    outcome:
+      "Categorizes messages (client question, bug report, team response, announcement, spam) and persists enriched structured data for automated support intelligence.",
+    tags: ["Whop API", "LLM Classification", "Turso"],
+    category: "Automation",
+    image: "https://picsum.photos/seed/whop-classifier/800/500",
+  },
+  {
+    icon: ChartLineUp,
+    title: "Predictive Churn Monitor",
+    objective:
+      "Predictive churn detection with daily health scans computing 0-100 risk scores across five metrics.",
+    outcome:
+      "Two-tier cost-optimized architecture: heuristic pre-filtering at Tier 1, deep-analysis LLM at Tier 2 with rolling context windows — delivering actionable red/yellow/green risk classifications.",
+    tags: ["Predictive AI", "Two-tier Agent", "Heuristics"],
+    category: "AI Agents",
+    image: "https://picsum.photos/seed/churn-predict/800/500",
+  },
+  {
+    icon: GoogleLogo,
+    title: "Google Workspace AI Automation",
+    objective:
+      "Managed deployment of AI agents with full access to every Workspace service through a single interface.",
+    outcome:
+      "Clients describe tasks in plain English — agent pulls from Sheets, drafts in Gmail, checks Calendar, and logs to Drive. New capabilities auto-ship with Google updates.",
+    tags: ["Google Workspace", "AI Agent", "Managed Service"],
+    category: "Managed Services",
+    image: "https://picsum.photos/seed/gworkspace-ai/800/500",
+  },
+  {
+    icon: GearSix,
+    title: "AI Automation Builder",
+    objective:
+      "Managed Make.com & n8n setup — AI agent that builds, configures, and manages entire workflows on behalf of the client.",
+    outcome:
+      "Clients describe automations in plain English. Agent builds the full workflow end-to-end, tests it, deploys it live, and modifies/scales as the business evolves.",
+    tags: ["Make.com", "n8n", "AI Agent"],
+    category: "Managed Services",
+    image: "https://picsum.photos/seed/auto-builder/800/500",
+  },
+  {
+    icon: Robot,
+    title: "AI Meta Ads Service",
+    objective:
+      "Fully managed Meta Ads campaign automation replacing traditional agency retainers.",
+    outcome:
+      "AI agent handles audience research, campaign creation, copywriting, budget allocation, A/B testing, performance monitoring, kills underperformers, and scales winners autonomously.",
+    tags: ["Meta Ads", "AI Agent", "Managed Service"],
+    category: "Managed Services",
+    image: "https://picsum.photos/seed/meta-service/800/500",
   },
 ];
 
 export default function ProjectsPage() {
-  const [activeFilter, setActiveFilter] = useState("All Systems");
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) => p.category === activeFilter);
 
   return (
     <>
       <Navbar />
       <main className="pt-32 pb-24">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          {/* ── Hero ── */}
+          {/* Hero */}
           <section className="mb-24 md:mb-32 grid md:grid-cols-2 gap-12 items-end">
             <FadeIn>
               <div>
                 <span className="inline-block font-mono text-[10px] tracking-[0.3em] text-muted uppercase mb-6 border-l-2 border-foreground pl-3">
-                  Project Demonstrations
+                  Project Archive
                 </span>
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[0.95]">
                   Proof of
@@ -75,14 +206,14 @@ export default function ProjectsPage() {
             </FadeIn>
             <FadeIn delay={0.15}>
               <p className="text-muted text-lg leading-relaxed font-light border-l border-border pl-6 max-w-md pb-2">
-                A curated archive of high-performance AI deployments. We bridge
-                the gap between architectural theory and operational reality
-                through precise engineering.
+                Every project listed here is a production system we built and
+                deployed. LLM agents, automation pipelines, and intelligence
+                platforms — operating in the real world.
               </p>
             </FadeIn>
           </section>
 
-          {/* ── Filters ── */}
+          {/* Filters */}
           <FadeIn>
             <section className="mb-16">
               <div className="flex flex-wrap gap-3">
@@ -103,26 +234,24 @@ export default function ProjectsPage() {
             </section>
           </FadeIn>
 
-          {/* ── Featured Case Study ── */}
+          {/* Featured Case Study */}
           <FadeIn>
             <section className="mb-24 md:mb-32">
               <div className="group grid md:grid-cols-12 gap-0 overflow-hidden bg-[#131315] border border-white/[0.08]">
-                {/* Image */}
                 <div className="md:col-span-7 relative h-[360px] md:h-[500px] overflow-hidden">
                   <img
                     src={featured.image}
-                    alt="Neural network visualization"
+                    alt={featured.title}
                     className="w-full h-full object-cover grayscale opacity-50 group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-[#131315] via-transparent to-transparent" />
                 </div>
 
-                {/* Content */}
                 <div className="md:col-span-5 p-8 md:p-12 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-6">
                     <span className="w-1.5 h-1.5 bg-foreground" />
                     <span className="text-[10px] font-mono tracking-[0.2em] text-foreground uppercase">
-                      Featured Architecture
+                      Featured Build
                     </span>
                   </div>
 
@@ -134,7 +263,6 @@ export default function ProjectsPage() {
                     {featured.description}
                   </p>
 
-                  {/* Stats */}
                   <div className="grid grid-cols-2 gap-8 mb-8">
                     {featured.stats.map((stat) => (
                       <div key={stat.label}>
@@ -148,7 +276,6 @@ export default function ProjectsPage() {
                     ))}
                   </div>
 
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-8">
                     {featured.tags.map((tag) => (
                       <span
@@ -164,7 +291,7 @@ export default function ProjectsPage() {
                     href="#"
                     className="group/link inline-flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] text-white/30 hover:text-white/70 transition-colors duration-300 uppercase"
                   >
-                    View Technical Whitepaper
+                    View Details
                     <ArrowRight
                       size={12}
                       weight="bold"
@@ -176,10 +303,10 @@ export default function ProjectsPage() {
             </section>
           </FadeIn>
 
-          {/* ── Project Cards Grid ── */}
+          {/* Project Cards Grid */}
           <section className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.08] overflow-hidden mb-24 md:mb-32">
-            {projects.map((project, i) => (
-              <FadeIn key={project.title} delay={i * 0.1}>
+            {filteredProjects.map((project, i) => (
+              <FadeIn key={project.title} delay={i * 0.06}>
                 <div className="group bg-[#131315] p-8 flex flex-col h-full transition-all duration-500 hover:bg-[#19191b]">
                   {/* Image */}
                   <div className="h-48 mb-8 overflow-hidden bg-black relative">
@@ -190,7 +317,11 @@ export default function ProjectsPage() {
                     />
                     <div className="absolute top-4 left-4">
                       <div className="inline-flex items-center justify-center w-10 h-10 bg-white/[0.06] border border-white/[0.08]">
-                        <project.icon size={20} weight="fill" className="text-foreground" />
+                        <project.icon
+                          size={20}
+                          weight="fill"
+                          className="text-foreground"
+                        />
                       </div>
                     </div>
                   </div>
@@ -236,10 +367,9 @@ export default function ProjectsPage() {
             ))}
           </section>
 
-          {/* ── CTA ── */}
+          {/* CTA */}
           <FadeIn>
             <section className="relative bg-[#131315] border border-white/[0.08] p-10 md:p-16 overflow-hidden">
-              {/* Topo bg */}
               <div
                 className="pointer-events-none absolute inset-0 opacity-[0.08]"
                 aria-hidden="true"
@@ -261,12 +391,11 @@ export default function ProjectsPage() {
                     Next step
                   </span>
                   <h2 className="mt-4 text-3xl md:text-4xl font-semibold tracking-tighter leading-tight">
-                    Request a Technical Briefing
+                    Have a similar problem?
                   </h2>
                   <p className="mt-4 text-sm text-muted leading-relaxed max-w-[50ch]">
-                    Schedule a consultation with our lead architects to discuss
-                    how we can implement these methodologies into your specific
-                    infrastructure.
+                    We build AI systems like these for businesses every week.
+                    Tell us what you need automated and we&apos;ll scope it out.
                   </p>
                 </div>
 
@@ -275,7 +404,7 @@ export default function ProjectsPage() {
                     href="/#contact"
                     className="group inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-medium bg-foreground text-background transition-transform duration-200 active:scale-[0.97]"
                   >
-                    Start Consultation
+                    Start a Conversation
                     <ArrowRight
                       size={16}
                       weight="bold"
@@ -283,9 +412,13 @@ export default function ProjectsPage() {
                     />
                   </a>
                   <div className="flex items-center gap-2 justify-center">
-                    <ShieldCheck size={14} weight="bold" className="text-muted" />
+                    <ShieldCheck
+                      size={14}
+                      weight="bold"
+                      className="text-muted"
+                    />
                     <span className="text-[10px] font-mono text-muted tracking-widest uppercase">
-                      Secure Data Protocol
+                      NDA Available on Request
                     </span>
                   </div>
                 </div>
