@@ -5,9 +5,10 @@ import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-
 import { List, X } from "@phosphor-icons/react";
 
 const navLinks = [
-  { label: "Services", href: "#features" },
-  { label: "Results", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#features" },
+  { label: "Projects", href: "/projects" },
+  { label: "Results", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {
@@ -57,7 +58,7 @@ export function Navbar() {
             {/* CTA + Mobile toggle */}
             <div className="flex items-center gap-3">
               <a
-                href="#contact"
+                href="/#contact"
                 className="hidden md:inline-flex items-center px-4 py-1.5 text-[13px] font-medium rounded-full bg-white text-black transition-transform duration-200 active:scale-[0.97] hover:bg-white/90"
               >
                 Get Started
@@ -95,7 +96,7 @@ export function Navbar() {
                   ))}
                   <div className="mt-2 px-3">
                     <a
-                      href="#contact"
+                      href="/#contact"
                       onClick={() => setMobileOpen(false)}
                       className="flex items-center justify-center w-full px-4 py-2.5 text-sm font-medium rounded-full bg-white text-black"
                     >
