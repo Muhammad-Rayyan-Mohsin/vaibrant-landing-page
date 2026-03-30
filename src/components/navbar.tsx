@@ -55,14 +55,8 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* CTA + Mobile toggle */}
+            {/* Mobile toggle */}
             <div className="flex items-center gap-3">
-              <a
-                href="/#contact"
-                className="hidden md:inline-flex items-center px-4 py-1.5 text-[13px] font-medium rounded-full bg-white text-black transition-transform duration-200 active:scale-[0.97] hover:bg-white/90"
-              >
-                Get Started
-              </a>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="md:hidden p-1.5 text-white/80 hover:text-white transition-colors"
@@ -94,15 +88,6 @@ export function Navbar() {
                       {link.label}
                     </a>
                   ))}
-                  <div className="mt-2 px-3">
-                    <a
-                      href="/#contact"
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-center justify-center w-full px-4 py-2.5 text-sm font-medium rounded-full bg-white text-black"
-                    >
-                      Get Started
-                    </a>
-                  </div>
                 </div>
               </motion.div>
             )}

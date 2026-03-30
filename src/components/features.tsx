@@ -1,43 +1,43 @@
 "use client";
 
-import { Brain, Robot, ChartLineUp, FlowArrow, ArrowRight } from "@phosphor-icons/react";
+import { Robot, GearSix, Megaphone, ChartLineUp, ArrowRight } from "@phosphor-icons/react";
 import { FadeIn } from "./fade-in";
 
 const services = [
   {
-    icon: Brain,
-    title: "Custom AI Models",
+    icon: Robot,
+    title: "LLM-Powered AI Agents",
     description:
-      "Bespoke neural architectures designed for proprietary data environments. We engineer precision-tuned intelligence that evolves with your unique operational requirements.",
-    cta: "Explore Capabilities",
+      "We build autonomous agents that plug into your tools and act on your behalf. From a 40-tool Meta Ads agent to Discord bots that triage bugs and score churn risk — our agents make decisions, not just suggestions.",
+    cta: "See Agent Builds",
   },
   {
-    icon: Robot,
-    title: "Intelligent Automation",
+    icon: GearSix,
+    title: "Workflow Automation",
     description:
-      "Autonomous workflows that transcend traditional RPA. We deploy cognitive agents capable of complex decision-making, reducing latency across your entire value chain.",
+      "We connect your CRMs, email platforms, and internal tools into end-to-end automated pipelines using Make.com, n8n, and custom agents. Describe what you need in plain English — we build, test, and deploy the full workflow.",
     cta: "View Automation Stack",
   },
   {
-    icon: ChartLineUp,
-    title: "AI Strategy & Consulting",
+    icon: Megaphone,
+    title: "AI-Managed Ad Campaigns",
     description:
-      "High-level architectural roadmaps for enterprise-wide digital transformation. We bridge the gap between abstract AI potential and tangible ROI-driven execution.",
-    cta: "Strategic Framework",
+      "Our AI agent handles audience research, campaign creation, copywriting, A/B testing, and budget optimization across Meta Ads — autonomously. Agency-level media buying without the agency retainer.",
+    cta: "Campaign Architecture",
   },
   {
-    icon: FlowArrow,
-    title: "Seamless Integration",
+    icon: ChartLineUp,
+    title: "Intelligence Platforms",
     description:
-      "Low-friction deployment across existing legacy systems and cloud infrastructures. Our integration protocols ensure high availability and minimal operational disruption.",
-    cta: "Technical Specs",
+      "Full-stack dashboards with multi-agent backends for client health scoring, support ticket analysis, predictive churn detection, and real-time sentiment classification — all streaming, all automated.",
+    cta: "Platform Deep Dive",
   },
 ];
 
 const meta = [
-  { label: "Architecture", value: "Distributed Neural Core" },
-  { label: "Latency", value: "< 14ms Global Avg." },
-  { label: "Compliance", value: "Enterprise Grade v2.0" },
+  { label: "Agents Deployed", value: "40+ Tool Integrations" },
+  { label: "Platforms", value: "Meta, Google, Discord, Whop" },
+  { label: "Stack", value: "Next.js / Mastra / LangGraph" },
 ];
 
 export function Features() {

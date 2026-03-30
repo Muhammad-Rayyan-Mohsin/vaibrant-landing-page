@@ -20,7 +20,7 @@ export function Hero() {
           playsInline
           className="h-full w-full object-cover"
         >
-          <source src="/hero-bg-dolly.mp4" type="video/mp4" />
+          <source src="/hero-bg-dolly-v2.mp4" type="video/mp4" />
         </video>
       </motion.div>
 
@@ -44,6 +44,19 @@ export function Hero() {
               AI Strategy / Custom Models / Automation
             </span>
           </div>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-8"
+          >
+            <a
+              href="#contact"
+              className="inline-flex items-center px-6 py-2.5 text-sm font-medium rounded-full bg-white text-black transition-transform duration-200 active:scale-[0.97] hover:bg-white/90"
+            >
+              Get Started
+            </a>
+          </motion.div>
         </motion.div>
 
         {/* Scroll indicator */}

@@ -31,10 +31,7 @@ body {
   color: var(--background);
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
+/* Lenis handles smooth scroll — no CSS scroll-behavior needed */
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
