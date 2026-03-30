@@ -20,11 +20,12 @@ export function Hero() {
           playsInline
           className="h-full w-full object-cover"
         >
-          <source src="/hero-bg-dolly-v2.mp4" type="video/mp4" />
+          <source src="/hero-kling-v2-1-master.mp4" type="video/mp4" />
         </video>
       </motion.div>
 
-      {/* Bottom content overlay */}
+      {/* Vignette — all edges blend into background */}
+      <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_150px_60px_rgba(10,10,10,0.9)]" />
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-background via-background/80 to-transparent" />
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[100dvh] px-6">
