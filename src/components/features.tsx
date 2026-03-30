@@ -1,135 +1,166 @@
 "use client";
 
-import { Robot, GearSix, Megaphone, ChartLineUp, ArrowRight } from "@phosphor-icons/react";
+import { Robot, GearSix, Megaphone, ArrowRight } from "@phosphor-icons/react";
 import { FadeIn } from "./fade-in";
-
-const services = [
-  {
-    icon: Robot,
-    title: "LLM-Powered AI Agents",
-    description:
-      "We build autonomous agents that plug into your tools and act on your behalf. From a 40-tool Meta Ads agent to Discord bots that triage bugs and score churn risk — our agents make decisions, not just suggestions.",
-    cta: "See Agent Builds",
-  },
-  {
-    icon: GearSix,
-    title: "Workflow Automation",
-    description:
-      "We connect your CRMs, email platforms, and internal tools into end-to-end automated pipelines using Make.com, n8n, and custom agents. Describe what you need in plain English — we build, test, and deploy the full workflow.",
-    cta: "View Automation Stack",
-  },
-  {
-    icon: Megaphone,
-    title: "AI-Managed Ad Campaigns",
-    description:
-      "Our AI agent handles audience research, campaign creation, copywriting, A/B testing, and budget optimization across Meta Ads — autonomously. Agency-level media buying without the agency retainer.",
-    cta: "Campaign Architecture",
-  },
-  {
-    icon: ChartLineUp,
-    title: "Intelligence Platforms",
-    description:
-      "Full-stack dashboards with multi-agent backends for client health scoring, support ticket analysis, predictive churn detection, and real-time sentiment classification — all streaming, all automated.",
-    cta: "Platform Deep Dive",
-  },
-];
-
-const meta = [
-  { label: "Agents Deployed", value: "40+ Tool Integrations" },
-  { label: "Platforms", value: "Meta, Google, Discord, Whop" },
-  { label: "Stack", value: "Next.js / Mastra / LangGraph" },
-];
 
 export function Features() {
   return (
-    <section id="features" className="relative py-24 md:py-32 overflow-hidden">
-      {/* Background grid */}
+    <section id="features" className="relative pt-0 pb-24 md:pb-32 overflow-hidden">
+      {/* Top gradient bridge — blends hero black into section */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-background to-transparent z-20" />
+      {/* Topographic SVG pattern */}
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
         aria-hidden="true"
         style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='800' height='800' viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 799c43.6 0 87.2-4.1 129.5-12.2C256.4 761.6 373.1 701 480 620c75.3-57 141.2-126.8 196-206 43.6-63 77.2-132.3 100-205C789.7 165.7 797.3 122.9 800 80V0M0 599c30.4 0 60.8-2.3 90.3-6.8 88.5-13.6 170.1-55.9 244.7-112.5C417 416.7 483.5 334.8 544 246c30.1-44.2 55.4-91.4 75.3-141.4 13.7-34.6 23.5-70.3 29.3-104.6H0v600z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E")`,
         }}
       />
-      {/* Gradient accent */}
-      <div className="pointer-events-none absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/[0.02] to-transparent" aria-hidden="true" />
+      {/* Top-right glow */}
+      <div className="pointer-events-none absolute -top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-white/[0.03] blur-[120px]" aria-hidden="true" />
 
-      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 pt-24 md:pt-32">
         {/* Header */}
         <FadeIn>
-          <div className="mb-16 md:mb-20">
-            <span className="inline-block font-mono text-[10px] tracking-[0.3em] text-foreground uppercase mb-4 border-l-2 border-foreground pl-3">
-              What We Do
+          <div className="mb-16 md:mb-24">
+            <span className="inline-block px-3 py-1 mb-6 bg-white/[0.04] text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-foreground border border-white/[0.06]">
+              Capabilities&ensp;|&ensp;Intelligence
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter leading-[1.1] max-w-2xl">
-              AI that works for
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none mb-8">
+              ADVANCED
               <br />
-              <span className="text-muted">your business.</span>
+              ARCHITECTURES.
             </h2>
+            <p className="text-lg md:text-xl text-muted font-light leading-relaxed max-w-2xl">
+              We engineer the cognitive infrastructure your business needs to operate
+              at scale. Our systems don&apos;t just assist — they decide, act, and adapt.
+            </p>
           </div>
         </FadeIn>
 
-        {/* 2x2 Bento Grid — sharp corners */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.06] border border-white/[0.08] overflow-hidden">
-          {services.map((service, i) => (
-            <FadeIn key={service.title} delay={i * 0.1}>
-              <div className="group relative bg-[#131315] p-8 md:p-12 transition-all duration-500 hover:bg-[#19191b] h-full flex flex-col justify-between">
-                <div className="relative z-10">
-                  {/* Icon container */}
-                  <div className="mb-8 inline-flex items-center justify-center w-12 h-12 bg-[#252628] border border-white/[0.08] group-hover:border-white/20 transition-colors duration-300">
-                    <service.icon size={24} weight="regular" className="text-foreground" />
-                  </div>
+        {/* Asymmetric Bento Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 items-stretch">
 
-                  <h3 className="text-xl md:text-2xl font-semibold tracking-tight mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-muted font-light leading-relaxed max-w-sm">
-                    {service.description}
-                  </p>
+          {/* Card 1: LLM-Powered AI Agents (7-col) */}
+          <FadeIn className="lg:col-span-7">
+            <div className="group relative overflow-hidden rounded-2xl bg-[#111113] p-8 md:p-12 h-full transition-[background-color] duration-500 hover:bg-[#151517]">
+              {/* Corner glow */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/[0.03] rounded-full blur-[80px] -mr-20 -mt-20 pointer-events-none" />
+
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="mb-10 md:mb-12 flex items-center justify-between">
+                  <Robot size={32} weight="regular" className="text-foreground" />
+                  <span className="text-[0.65rem] font-semibold tracking-widest text-muted/40 uppercase">
+                    Agents // 01
+                  </span>
                 </div>
 
-                {/* CTA link */}
-                <div className="relative z-10 mt-10 md:mt-12 flex items-center gap-2 text-[10px] tracking-[0.2em] font-mono text-white/30 group-hover:text-white/70 transition-colors duration-300 uppercase cursor-pointer">
-                  <span>{service.cta}</span>
-                  <ArrowRight size={12} weight="bold" className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                </div>
+                <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-5">
+                  LLM-Powered AI Agents
+                </h3>
+                <p className="text-muted text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-md">
+                  Autonomous agents with 40+ tool integrations that plug into
+                  your stack and act on your behalf. From Meta Ads management
+                  to Discord triage bots — they make decisions, not suggestions.
+                </p>
 
-                {/* Hover corner gradient */}
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="mt-auto">
+                  <a href="#" className="group/link inline-flex items-center gap-2 text-foreground text-xs font-semibold tracking-widest uppercase transition-colors hover:text-muted">
+                    See Agent Builds
+                    <ArrowRight size={14} weight="bold" className="transition-transform duration-300 group-hover/link:translate-x-1" />
+                  </a>
+                </div>
               </div>
-            </FadeIn>
-          ))}
-        </div>
+            </div>
+          </FadeIn>
 
-        {/* Footer meta strip */}
-        <FadeIn delay={0.3}>
-          <div className="mt-16 md:mt-20 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-            <div className="flex flex-wrap items-center gap-8 md:gap-12">
-              {meta.map((item) => (
-                <div key={item.label}>
-                  <div className="text-[10px] tracking-widest text-muted/60 uppercase mb-1">
-                    {item.label}
-                  </div>
-                  <div className="text-sm font-medium text-foreground">
-                    {item.value}
+          {/* Card 2: Workflow Automation (5-col) */}
+          <FadeIn delay={0.1} className="lg:col-span-5">
+            <div className="group relative overflow-hidden rounded-2xl bg-[#161618] p-8 md:p-12 h-full transition-[background-color] duration-500 hover:bg-[#1a1a1d]">
+              {/* Image overlay */}
+              <div className="absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity duration-700 pointer-events-none">
+                <img
+                  src="/topo-lines.png"
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-full object-cover grayscale"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#161618] via-[#161618]/80 to-transparent pointer-events-none" />
+
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="mb-10 md:mb-12 flex items-center justify-between">
+                  <GearSix size={32} weight="regular" className="text-foreground" />
+                  <span className="text-[0.65rem] font-semibold tracking-widest text-muted/40 uppercase">
+                    Automation // 02
+                  </span>
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-5">
+                  Workflow Automation
+                </h3>
+                <p className="text-muted leading-relaxed mb-10 md:mb-12">
+                  End-to-end pipelines built on Make.com, n8n, and custom
+                  agents. Describe what you need in plain English — we
+                  build it, test it, deploy it live.
+                </p>
+
+                <div className="mt-auto">
+                  <a href="#" className="group/link inline-flex items-center gap-2 text-foreground text-xs font-semibold tracking-widest uppercase transition-colors hover:text-muted">
+                    View Automation Stack
+                    <ArrowRight size={14} weight="bold" className="transition-transform duration-300 group-hover/link:translate-x-1" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Card 3: AI-Managed Ad Campaigns (Full width) */}
+          <FadeIn delay={0.2} className="lg:col-span-12">
+            <div className="group relative overflow-hidden rounded-2xl bg-[#111113] p-8 md:p-12 transition-[background-color] duration-500 hover:bg-[#151517]">
+              <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                {/* Image side */}
+                <div className="md:w-1/2 relative">
+                  <div className="absolute inset-0 bg-white/[0.04] blur-[60px] rounded-full pointer-events-none" />
+                  <div className="relative rounded-xl overflow-hidden aspect-video border border-white/[0.05]">
+                    <img
+                      src="/proj-meta-ads.png"
+                      alt="Meta Ads AI visualization"
+                      loading="lazy"
+                      className="w-full h-full object-cover grayscale contrast-125 opacity-80"
+                    />
                   </div>
                 </div>
-              ))}
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-px bg-white/10" />
-              <span className="text-[10px] font-mono text-muted/50 tracking-widest">
-                EST. 2024 / PROTOCOL ALPHA
-              </span>
-            </div>
-          </div>
-        </FadeIn>
-      </div>
 
-      {/* Background glow */}
-      <div className="absolute -bottom-64 -left-64 w-[600px] h-[600px] rounded-full bg-white/[0.02] blur-[120px] pointer-events-none" aria-hidden="true" />
+                {/* Text side */}
+                <div className="md:w-1/2">
+                  <div className="mb-8 flex items-center justify-between">
+                    <Megaphone size={32} weight="regular" className="text-foreground" />
+                    <span className="text-[0.65rem] font-semibold tracking-widest text-muted/40 uppercase">
+                      Campaigns // 03
+                    </span>
+                  </div>
+
+                  <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-5">
+                    AI-Managed Ad Campaigns
+                  </h3>
+                  <p className="text-muted text-base md:text-lg leading-relaxed mb-8">
+                    Our agent handles audience research, campaign creation,
+                    copywriting, A/B testing, and budget optimization across
+                    Meta Ads — autonomously. Agency-level media buying
+                    without the agency retainer.
+                  </p>
+
+                  <a href="#" className="group/link inline-flex items-center gap-2 text-foreground text-xs font-semibold tracking-widest uppercase transition-colors hover:text-muted">
+                    Campaign Architecture
+                    <ArrowRight size={14} weight="bold" className="transition-transform duration-300 group-hover/link:translate-x-1" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
     </section>
   );
 }
