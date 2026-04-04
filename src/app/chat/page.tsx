@@ -52,10 +52,13 @@ export default function ChatPage() {
     if (hydrated.current) saveMessages(messages);
   }, [messages]);
 
-  // Auto-scroll to bottom on new content
+  // Auto-scroll to bottom on new content (rAF to avoid forced reflow)
   useEffect(() => {
     const el = scrollRef.current;
-    if (el) el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+    if (!el) return;
+    requestAnimationFrame(() => {
+      el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+    });
   }, [messages]);
 
   const sendMessage = useCallback(

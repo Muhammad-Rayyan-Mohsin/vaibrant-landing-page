@@ -41,12 +41,8 @@ export default function RootLayout({
       className={`${generalSans.variable} ${satoshi.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <head>
-        <link
-          rel="preload"
-          as="video"
-          href="https://jjn46rcnnayepb32.public.blob.vercel-storage.com/vortex-walk.mp4"
-          type="video/mp4"
-        />
+        <link rel="preconnect" href="https://jjn46rcnnayepb32.public.blob.vercel-storage.com" crossOrigin="" />
+        <link rel="preconnect" href="https://lh3.googleusercontent.com" crossOrigin="" />
       </head>
       <body className="min-h-dvh bg-background text-foreground">
         <SmoothScroll>{children}</SmoothScroll>

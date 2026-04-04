@@ -311,7 +311,7 @@ export default function ProjectsPage() {
           <section className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] border border-white/[0.08] overflow-hidden mb-24 md:mb-32">
             {filteredProjects.map((project, i) => (
               <FadeIn key={project.title} delay={i * 0.06}>
-                <div className="group bg-[#131315] p-8 flex flex-col h-full transition-all duration-500 hover:bg-[#19191b]">
+                <div className="group bg-[#131315] p-8 flex flex-col h-full transition-[background-color] duration-500 hover:bg-[#19191b]">
                   {/* Image */}
                   <div className="h-48 mb-8 overflow-hidden bg-black relative">
                     <Image

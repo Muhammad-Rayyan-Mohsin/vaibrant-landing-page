@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: [
       "@phosphor-icons/react",
       "framer-motion",
+      "react-markdown",
     ],
   },
 };

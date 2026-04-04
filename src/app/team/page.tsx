@@ -93,8 +93,9 @@ export default function TeamPage() {
                       src={member.image}
                       alt={member.name}
                       fill
+                      {...(i === 0 && { priority: true })}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                      className="object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-[filter,opacity] duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
 
@@ -104,7 +105,7 @@ export default function TeamPage() {
                         href={member.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="absolute top-5 right-5 p-3 rounded-full bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-white hover:text-background"
+                        className="absolute top-5 right-5 p-3 rounded-full bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-[opacity,background-color,color] duration-500 hover:bg-white hover:text-background"
                       >
                         <ArrowUpRight size={16} weight="bold" />
                       </a>
@@ -129,7 +130,7 @@ export default function TeamPage() {
                       member.name
                     )}
                   </h3>
-                  <div className="h-px w-12 bg-white/[0.1] mb-4 transition-all duration-500 group-hover:w-full" />
+                  <div className="h-px bg-white/[0.1] mb-4 w-12 group-hover:w-full transition-[width] duration-500 will-change-[width]" />
                   <p className="text-[0.65rem] font-mono tracking-wider uppercase text-muted/70">
                     Intelligence Focus: {member.focus}
                   </p>
