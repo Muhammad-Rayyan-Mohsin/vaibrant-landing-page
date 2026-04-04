@@ -7,9 +7,11 @@ const TOPO_SVG = `url("data:image/svg+xml,%3Csvg width='800' height='800' viewBo
 
 export function Features() {
   return (
-    <section id="features" className="relative pt-0 pb-24 md:pb-32 overflow-hidden">
-      {/* Top gradient bridge — blends hero black into section */}
-      <div className="pointer-events-none absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-background to-transparent z-20" />
+    <section id="features" className="relative py-24 md:py-32 overflow-hidden">
+      {/* Top fade — blends from previous section */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent z-20" />
+      {/* Bottom fade — blends into CTA */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent z-20" />
       {/* Topographic SVG pattern */}
       <div
         className="pointer-events-none absolute inset-0 opacity-40"

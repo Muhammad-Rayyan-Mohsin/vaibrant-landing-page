@@ -63,7 +63,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-lg"
           >
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] uppercase" style={{ marginLeft: "-0.15em" }}>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] uppercase" style={{ marginLeft: "-0.15em" }}>
               Vaibrant
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed">

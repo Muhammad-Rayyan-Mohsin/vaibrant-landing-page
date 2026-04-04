@@ -60,8 +60,12 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="about" className="relative py-24 md:py-32 overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 w-full">
+    <section id="about" className="relative pt-0 pb-24 md:pb-32 overflow-hidden">
+      {/* Top fade — blends from hero */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-background to-transparent z-20" />
+      {/* Bottom fade — blends into next section */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent z-20" />
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 w-full pt-24 md:pt-32">
         {/* Header */}
         <FadeIn>
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 md:mb-20 gap-8">
