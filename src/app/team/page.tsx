@@ -11,6 +11,7 @@ const team = [
     name: "Muhammad Rayyan Mohsin",
     role: "Head of Neural Architectures",
     focus: "Generative Logic & Ethics",
+    link: "https://portfolio-rayyan-opal.vercel.app/",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBcoQ4pQog_VLAWJAIPsHTTXciWKlkpB_zCq4vSdN2X-i06HRzszi2BiIQ6RHjwMJFB-8VCx8NCbE25n8Z6l9deP4ULuD1GNdNvOeWppUrGlf4ZdRyGuBIqNaUSi_UTdhmz1yt79PuhNGfuNyNezZbg1vuCQpYPu1g8ITOFsg5qqoLH-LBr77IgGPfnV-S40C01UK0JW7305BR57O5l2rgGCRD61plgQABRqXPObHrG9QNAqObYnUSadUCFSvev_493m9dcwVsY8g0",
     offset: false,
@@ -98,12 +99,16 @@ export default function TeamPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
 
                     {/* Hover arrow */}
-                    <a
-                      href="#"
-                      className="absolute top-5 right-5 p-3 rounded-full bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-white hover:text-background"
-                    >
-                      <ArrowUpRight size={16} weight="bold" />
-                    </a>
+                    {member.link && (
+                      <a
+                        href={member.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute top-5 right-5 p-3 rounded-full bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-white hover:text-background"
+                      >
+                        <ArrowUpRight size={16} weight="bold" />
+                      </a>
+                    )}
                   </div>
 
                   {/* Info */}
@@ -111,7 +116,18 @@ export default function TeamPage() {
                     {member.role}
                   </span>
                   <h3 className="text-2xl font-semibold tracking-tight text-foreground mb-4">
-                    {member.name}
+                    {member.link ? (
+                      <a
+                        href={member.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-muted transition-colors duration-300"
+                      >
+                        {member.name}
+                      </a>
+                    ) : (
+                      member.name
+                    )}
                   </h3>
                   <div className="h-px w-12 bg-white/[0.1] mb-4 transition-all duration-500 group-hover:w-full" />
                   <p className="text-[0.65rem] font-mono tracking-wider uppercase text-muted/70">
