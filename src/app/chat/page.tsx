@@ -190,11 +190,11 @@ export default function ChatPage() {
         </svg>
       </div>
 
-      {/* Back button */}
-      <div className="relative z-10 shrink-0 px-4 md:px-6 pt-3 pb-1">
+      {/* Back button — 44px touch target on mobile */}
+      <div className="relative z-10 shrink-0 px-2 sm:px-4 md:px-6 pt-2 sm:pt-3 pb-1">
         <a
           href="/"
-          className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-foreground transition-colors duration-200"
+          className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-foreground transition-colors duration-200 min-h-[44px] min-w-[44px] px-2 -mx-2 touch-manipulation"
         >
           <ArrowLeft size={14} weight="bold" />
           <span>Back</span>

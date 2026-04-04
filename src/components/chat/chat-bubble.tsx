@@ -10,7 +10,7 @@ interface ChatBubbleProps {
 
 function BotAvatar() {
   return (
-    <div className="shrink-0 w-6 h-6 rounded-full bg-white/[0.08] border border-white/[0.12] flex items-center justify-center">
+    <div className="hidden sm:flex shrink-0 w-6 h-6 rounded-full bg-white/[0.08] border border-white/[0.12] items-center justify-center">
       <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
         <path
           d="M6 0L11.5 9.5H0.5L6 0Z"
@@ -24,7 +24,7 @@ function BotAvatar() {
 
 function UserAvatar() {
   return (
-    <div className="shrink-0 w-6 h-6 rounded-full bg-white/[0.08] border border-white/[0.12] flex items-center justify-center">
+    <div className="hidden sm:flex shrink-0 w-6 h-6 rounded-full bg-white/[0.08] border border-white/[0.12] items-center justify-center">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
         <circle cx="6" cy="4" r="2.2" fill="currentColor" className="text-foreground/70" />
         <path
@@ -50,7 +50,7 @@ export function ChatBubble({ role, content }: ChatBubbleProps) {
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="flex justify-end gap-2 items-start"
       >
-        <div className="max-w-[80%] md:max-w-[65%] px-3.5 py-2.5 rounded-xl text-xs leading-relaxed whitespace-pre-wrap bg-white/[0.08] border border-white/[0.1] text-foreground">
+        <div className="max-w-[88%] sm:max-w-[75%] md:max-w-[65%] px-3.5 py-2.5 rounded-xl text-xs leading-relaxed whitespace-pre-wrap bg-white/[0.08] border border-white/[0.1] text-foreground">
           {content}
         </div>
         <UserAvatar />
@@ -66,7 +66,7 @@ export function ChatBubble({ role, content }: ChatBubbleProps) {
       className="flex justify-start gap-2 items-start"
     >
       <BotAvatar />
-      <div className="max-w-[80%] md:max-w-[65%] px-3.5 py-3 rounded-xl bg-surface border border-border text-foreground">
+      <div className="max-w-[88%] sm:max-w-[75%] md:max-w-[65%] px-3.5 py-3 rounded-xl bg-surface border border-border text-foreground">
         <Markdown
           components={{
             h1: ({ children }) => (

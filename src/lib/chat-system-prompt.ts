@@ -80,7 +80,15 @@ Real-time data processing with AI-powered triage and alerting.
 - **Proof:** Predictive Churn Monitor — two-tier detection with daily health scans, 0-100 risk scores, cost-optimized architecture (heuristic pre-filtering + deep LLM analysis).
 - **Proof:** Cold Email Engine — multi-step campaigns with AI sentiment classification, lead scoring, domain health verification, 14-day warmup scheduler. 177 automated tests.
 
-### 5. Data Intelligence
+### 5. AI Agent Deployment (OpenClaw)
+Turnkey OpenClaw enterprise deployment — we configure, customize, and connect autonomous AI agents to existing business stacks across 50+ platform integrations.
+- **Proof:** OpenClaw Enterprise Integration — deployed AI agents across Slack, Discord, CRM, and ERP systems for support triage, internal ops, and customer-facing interactions. Enterprise-grade with audit logs and human-in-the-loop guardrails. Days to deploy, not months.
+
+### 6. Autonomous Social Media
+AI agents that research trends, generate platform-native content in brand voice, schedule optimally, and adapt strategy from real-time analytics.
+- **Proof:** AI Social Media Engine — autonomous multi-platform agent covering 5 channels, cutting manual social hours by 70% while growing reach consistently. Generates content, schedules posts, monitors engagement, and optimizes strategy — all without human intervention.
+
+### 7. Data Intelligence
 Turning scattered information into actionable business intelligence.
 - **Proof:** YT Trends Dashboard — trending video discovery with LLM-powered trend analysis for content pattern recognition.
 - **Proof:** Discord Intelligence Viewer — conversational AI that ingests full channel context and answers natural language questions with source-attributed insights.
