@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { JetBrains_Mono } from "next/font/google";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { ChatFab } from "@/components/chat-fab";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
+const generalSans = localFont({
+  src: "../../public/fonts/GeneralSans-Variable.woff2",
+  variable: "--font-general-sans",
   display: "swap",
+  weight: "200 700",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const satoshi = localFont({
+  src: "../../public/fonts/Satoshi-Variable.woff2",
+  variable: "--font-satoshi",
+  display: "swap",
+  weight: "300 900",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -29,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${geistMono.variable} antialiased`}
+      className={`${generalSans.variable} ${satoshi.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <head>
         <link

@@ -1,7 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "@phosphor-icons/react";
 import Markdown from "react-markdown";
+import { ContactModal } from "./contact-modal";
+
+const CTA_MARKER = "[CONTACT_CTA]";
 
 interface ChatBubbleProps {
   role: "user" | "assistant";
@@ -39,8 +44,32 @@ function UserAvatar() {
   );
 }
 
+function ContactCTAButton({ onClick }: { onClick: () => void }) {
+  return (
+    <motion.button
+      initial={{ opacity: 0, y: 4 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+      onClick={onClick}
+      className="group inline-flex items-center gap-2 mt-3 px-4 py-2.5 rounded-xl bg-white text-black text-xs font-medium transition-all duration-200 hover:bg-white/90 active:scale-[0.97]"
+    >
+      Contact Us
+      <ArrowRight
+        size={13}
+        weight="bold"
+        className="transition-transform duration-200 group-hover:translate-x-0.5"
+      />
+    </motion.button>
+  );
+}
+
 export function ChatBubble({ role, content }: ChatBubbleProps) {
+  const [modalOpen, setModalOpen] = useState(false);
   const isUser = role === "user";
+
+  // Check if content has CTA marker
+  const hasCTA = !isUser && content.includes(CTA_MARKER);
+  const cleanContent = content.replace(CTA_MARKER, "").trim();
 
   if (isUser) {
     return (
@@ -59,116 +88,122 @@ export function ChatBubble({ role, content }: ChatBubbleProps) {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className="flex justify-start gap-2 items-start"
-    >
-      <BotAvatar />
-      <div className="max-w-[88%] sm:max-w-[75%] md:max-w-[65%] px-3.5 py-3 rounded-xl bg-surface border border-border text-foreground">
-        <Markdown
-          components={{
-            h1: ({ children }) => (
-              <h3 className="text-xs font-semibold tracking-tight text-foreground mt-3 mb-1.5 first:mt-0">
-                {children}
-              </h3>
-            ),
-            h2: ({ children }) => (
-              <h4 className="text-xs font-semibold tracking-tight text-foreground mt-3 mb-1.5 first:mt-0">
-                {children}
-              </h4>
-            ),
-            h3: ({ children }) => (
-              <h5 className="text-xs font-semibold text-foreground mt-2.5 mb-1 first:mt-0">
-                {children}
-              </h5>
-            ),
-            p: ({ children }) => (
-              <p className="text-xs leading-relaxed text-foreground/90 mb-2 last:mb-0">
-                {children}
-              </p>
-            ),
-            strong: ({ children }) => (
-              <strong className="font-semibold text-foreground">{children}</strong>
-            ),
-            em: ({ children }) => (
-              <em className="italic text-foreground/80">{children}</em>
-            ),
-            a: ({ href, children }) => (
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground underline underline-offset-2 decoration-muted/40 hover:decoration-foreground transition-colors duration-200"
-              >
-                {children}
-              </a>
-            ),
-            ul: ({ children }) => (
-              <ul className="text-xs leading-relaxed text-foreground/90 mb-2 last:mb-0 space-y-1 pl-3.5 list-disc marker:text-muted/50">
-                {children}
-              </ul>
-            ),
-            ol: ({ children }) => (
-              <ol className="text-xs leading-relaxed text-foreground/90 mb-2 last:mb-0 space-y-1 pl-3.5 list-decimal marker:text-muted/50">
-                {children}
-              </ol>
-            ),
-            li: ({ children }) => (
-              <li className="pl-0.5">{children}</li>
-            ),
-            blockquote: ({ children }) => (
-              <blockquote className="border-l-2 border-muted/30 pl-3 my-2 text-foreground/70 italic">
-                {children}
-              </blockquote>
-            ),
-            code: ({ className, children }) => {
-              const isBlock = className?.includes("language-");
-              if (isBlock) {
-                return (
-                  <code className="text-[11px] font-mono">{children}</code>
-                );
-              }
-              return (
-                <code className="px-1 py-0.5 rounded bg-white/[0.06] border border-white/[0.08] text-[11px] font-mono text-foreground">
+    <>
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        className="flex justify-start gap-2 items-start"
+      >
+        <BotAvatar />
+        <div className="max-w-[88%] sm:max-w-[75%] md:max-w-[65%] px-3.5 py-3 rounded-xl bg-surface border border-border text-foreground">
+          <Markdown
+            components={{
+              h1: ({ children }) => (
+                <h3 className="text-xs font-semibold tracking-tight text-foreground mt-3 mb-1.5 first:mt-0">
                   {children}
-                </code>
-              );
-            },
-            pre: ({ children }) => (
-              <pre className="my-2 last:mb-0 rounded-lg bg-black/40 border border-white/[0.06] px-3 py-2 overflow-x-auto text-foreground/80">
-                {children}
-              </pre>
-            ),
-            hr: () => (
-              <hr className="my-3 border-border" />
-            ),
-            table: ({ children }) => (
-              <div className="my-2 last:mb-0 overflow-x-auto rounded-lg border border-white/[0.08]">
-                <table className="w-full text-xs">{children}</table>
-              </div>
-            ),
-            thead: ({ children }) => (
-              <thead className="bg-white/[0.04] text-foreground text-left">
-                {children}
-              </thead>
-            ),
-            th: ({ children }) => (
-              <th className="px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted border-b border-white/[0.08]">
-                {children}
-              </th>
-            ),
-            td: ({ children }) => (
-              <td className="px-2.5 py-1.5 border-b border-white/[0.04] text-foreground/80">
-                {children}
-              </td>
-            ),
-          }}
-        >
-          {content}
-        </Markdown>
-      </div>
-    </motion.div>
+                </h3>
+              ),
+              h2: ({ children }) => (
+                <h4 className="text-xs font-semibold tracking-tight text-foreground mt-3 mb-1.5 first:mt-0">
+                  {children}
+                </h4>
+              ),
+              h3: ({ children }) => (
+                <h5 className="text-xs font-semibold text-foreground mt-2.5 mb-1 first:mt-0">
+                  {children}
+                </h5>
+              ),
+              p: ({ children }) => (
+                <p className="text-xs leading-relaxed text-foreground/90 mb-2 last:mb-0">
+                  {children}
+                </p>
+              ),
+              strong: ({ children }) => (
+                <strong className="font-semibold text-foreground">{children}</strong>
+              ),
+              em: ({ children }) => (
+                <em className="italic text-foreground/80">{children}</em>
+              ),
+              a: ({ href, children }) => (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground underline underline-offset-2 decoration-muted/40 hover:decoration-foreground transition-colors duration-200"
+                >
+                  {children}
+                </a>
+              ),
+              ul: ({ children }) => (
+                <ul className="text-xs leading-relaxed text-foreground/90 mb-2 last:mb-0 space-y-1 pl-3.5 list-disc marker:text-muted/50">
+                  {children}
+                </ul>
+              ),
+              ol: ({ children }) => (
+                <ol className="text-xs leading-relaxed text-foreground/90 mb-2 last:mb-0 space-y-1 pl-3.5 list-decimal marker:text-muted/50">
+                  {children}
+                </ol>
+              ),
+              li: ({ children }) => (
+                <li className="pl-0.5">{children}</li>
+              ),
+              blockquote: ({ children }) => (
+                <blockquote className="border-l-2 border-muted/30 pl-3 my-2 text-foreground/70 italic">
+                  {children}
+                </blockquote>
+              ),
+              code: ({ className, children }) => {
+                const isBlock = className?.includes("language-");
+                if (isBlock) {
+                  return (
+                    <code className="text-[11px] font-mono">{children}</code>
+                  );
+                }
+                return (
+                  <code className="px-1 py-0.5 rounded bg-white/[0.06] border border-white/[0.08] text-[11px] font-mono text-foreground">
+                    {children}
+                  </code>
+                );
+              },
+              pre: ({ children }) => (
+                <pre className="my-2 last:mb-0 rounded-lg bg-black/40 border border-white/[0.06] px-3 py-2 overflow-x-auto text-foreground/80">
+                  {children}
+                </pre>
+              ),
+              hr: () => (
+                <hr className="my-3 border-border" />
+              ),
+              table: ({ children }) => (
+                <div className="my-2 last:mb-0 overflow-x-auto rounded-lg border border-white/[0.08]">
+                  <table className="w-full text-xs">{children}</table>
+                </div>
+              ),
+              thead: ({ children }) => (
+                <thead className="bg-white/[0.04] text-foreground text-left">
+                  {children}
+                </thead>
+              ),
+              th: ({ children }) => (
+                <th className="px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted border-b border-white/[0.08]">
+                  {children}
+                </th>
+              ),
+              td: ({ children }) => (
+                <td className="px-2.5 py-1.5 border-b border-white/[0.04] text-foreground/80">
+                  {children}
+                </td>
+              ),
+            }}
+          >
+            {cleanContent}
+          </Markdown>
+
+          {hasCTA && <ContactCTAButton onClick={() => setModalOpen(true)} />}
+        </div>
+      </motion.div>
+
+      <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
+    </>
   );
 }

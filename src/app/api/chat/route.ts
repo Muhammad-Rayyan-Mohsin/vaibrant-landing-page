@@ -1,30 +1,46 @@
 import { VAIBRANT_SYSTEM_PROMPT } from "@/lib/chat-system-prompt";
 
+export const maxDuration = 60;
+
 export async function POST(request: Request) {
   const { messages } = await request.json();
 
-  const response = await fetch(
-    "https://openrouter.ai/api/v1/chat/completions",
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://vaibrant.agency",
-        "X-Title": "Vaibrant Chat",
-      },
-      body: JSON.stringify({
-        model: "deepseek/deepseek-v3.2",
-        messages: [
-          { role: "system", content: VAIBRANT_SYSTEM_PROMPT },
-          ...messages,
-        ],
-        stream: true,
-        temperature: 0.4,
-        max_tokens: 1500,
-      }),
-    }
-  );
+  const fetchController = new AbortController();
+  const timeout = setTimeout(() => fetchController.abort(), 30_000);
+
+  let response: Response;
+  try {
+    response = await fetch(
+      "https://openrouter.ai/api/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          "Content-Type": "application/json",
+          "HTTP-Referer": "https://vaibrant.agency",
+          "X-Title": "Vaibrant Chat",
+        },
+        body: JSON.stringify({
+          model: "deepseek/deepseek-v3.2",
+          messages: [
+            { role: "system", content: VAIBRANT_SYSTEM_PROMPT },
+            ...messages,
+          ],
+          stream: true,
+          temperature: 0.4,
+          max_tokens: 1500,
+        }),
+        signal: fetchController.signal,
+      }
+    );
+  } catch {
+    clearTimeout(timeout);
+    return Response.json(
+      { error: "AI service timed out. Please try again." },
+      { status: 504 }
+    );
+  }
+  clearTimeout(timeout);
 
   if (!response.ok) {
     return Response.json(
