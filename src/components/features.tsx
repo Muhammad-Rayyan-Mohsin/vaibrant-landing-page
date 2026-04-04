@@ -1,7 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { Robot, GearSix, Megaphone, ArrowRight } from "@phosphor-icons/react";
 import { ScrollReveal } from "./scroll-reveal";
+
+const TOPO_SVG = `url("data:image/svg+xml,%3Csvg width='800' height='800' viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 799c43.6 0 87.2-4.1 129.5-12.2C256.4 761.6 373.1 701 480 620c75.3-57 141.2-126.8 196-206 43.6-63 77.2-132.3 100-205C789.7 165.7 797.3 122.9 800 80V0M0 599c30.4 0 60.8-2.3 90.3-6.8 88.5-13.6 170.1-55.9 244.7-112.5C417 416.7 483.5 334.8 544 246c30.1-44.2 55.4-91.4 75.3-141.4 13.7-34.6 23.5-70.3 29.3-104.6H0v600z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E")`;
 
 export function Features() {
   return (
@@ -76,14 +79,10 @@ export function Features() {
           {/* Card 2: Workflow Automation (5-col) */}
           <ScrollReveal className="lg:col-span-5" offset={30}>
             <div className="group relative overflow-hidden rounded-2xl bg-[#161618] p-8 md:p-12 h-full transition-[background-color] duration-500 hover:bg-[#1a1a1d]">
-              <div className="absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity duration-700 pointer-events-none">
-                <img
-                  src="/topo-lines.png"
-                  alt=""
-                  loading="lazy"
-                  className="w-full h-full object-cover grayscale"
-                />
-              </div>
+              <div
+                className="absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity duration-700 pointer-events-none"
+                style={{ backgroundImage: TOPO_SVG, backgroundSize: "cover" }}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[#161618] via-[#161618]/80 to-transparent pointer-events-none" />
 
               <div className="relative z-10 flex flex-col h-full">
@@ -120,11 +119,12 @@ export function Features() {
                 <div className="md:w-1/2 relative">
                   <div className="absolute inset-0 bg-white/[0.04] blur-[60px] rounded-full pointer-events-none" />
                   <div className="relative rounded-xl overflow-hidden aspect-video border border-white/[0.05]">
-                    <img
-                      src="/proj-meta-ads.png"
+                    <Image
+                      src="https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/meta-ads.png"
                       alt="Meta Ads AI visualization"
-                      loading="lazy"
-                      className="w-full h-full object-cover grayscale contrast-125 opacity-80"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover grayscale contrast-125 opacity-80"
                     />
                   </div>
                 </div>

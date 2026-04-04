@@ -18,6 +18,13 @@ export function Footer() {
               AI services agency building intelligent systems that
               drive measurable business outcomes.
             </p>
+            <a
+              href="/chat"
+              className="mt-5 inline-flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-full border border-white/[0.1] text-muted hover:text-foreground hover:border-white/[0.2] transition-all duration-200"
+            >
+              <svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor"><path d="M216,48H40A16,16,0,0,0,24,64V224a15.85,15.85,0,0,0,9.24,14.5A16.13,16.13,0,0,0,40,240a15.94,15.94,0,0,0,10.34-3.8l.09-.07L83.27,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM40,224h0ZM216,192H80a8,8,0,0,0-5.23,1.95L40,224V64H216Z"/></svg>
+              Chat with AI
+            </a>
           </div>
 
           {/* Link columns */}

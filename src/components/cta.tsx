@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight, ChatCircleDots } from "@phosphor-icons/react";
 import { FadeIn } from "./fade-in";
 
 export function CTA() {
@@ -51,10 +51,11 @@ export function CTA() {
                   />
                 </a>
                 <a
-                  href="#"
-                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-full border border-border text-foreground transition-colors duration-200 hover:bg-surface"
+                  href="/chat"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border text-foreground transition-colors duration-200 hover:bg-surface"
                 >
-                  See Case Studies
+                  <ChatCircleDots size={16} weight="fill" />
+                  Ask Our AI
                 </a>
               </div>
             </div>

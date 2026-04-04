@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Geist_Mono } from "next/font/google";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { ChatFab } from "@/components/chat-fab";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -30,8 +31,17 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${geistMono.variable} antialiased`}
     >
+      <head>
+        <link
+          rel="preload"
+          as="video"
+          href="https://jjn46rcnnayepb32.public.blob.vercel-storage.com/vortex-walk.mp4"
+          type="video/mp4"
+        />
+      </head>
       <body className="min-h-dvh bg-background text-foreground">
         <SmoothScroll>{children}</SmoothScroll>
+        <ChatFab />
       </body>
     </html>
   );

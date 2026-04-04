@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
 import { FadeIn } from "./fade-in";
 
@@ -11,7 +12,7 @@ const projects = [
       "Challenge: Manual ad management bleeding $2K-$5K/month in agency fees. Result: A full-stack LLM agent with 40+ tools that autonomously creates campaigns, generates creatives, and optimizes spend with real-time ROAS tracking.",
     year: "2024",
     client: "Internal Platform",
-    image: "/proj-meta-ads.png",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/meta-ads.png",
   },
   {
     title: "CAIO Intelligence Platform",
@@ -20,7 +21,7 @@ const projects = [
       "Challenge: Disconnected client health signals across support channels. Result: Full-stack intelligence dashboard with specialized LLM agents for ticket analysis, risk reporting, and automated health assessment via real-time streaming.",
     year: "2024",
     client: "Enterprise SaaS",
-    image: "/proj-caio.png",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/caio-platform.png",
   },
 ];
 
@@ -57,11 +58,12 @@ export function Projects() {
               <div className="group cursor-pointer">
                 {/* Image */}
                 <div className="relative aspect-[16/10] overflow-hidden mb-6 md:mb-8 border border-white/[0.08] bg-[#131315]">
-                  <img
+                  <Image
                     alt={project.title}
                     src={project.image}
-                    loading="lazy"
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-[0.85] transition-[transform,filter] duration-1000"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover grayscale brightness-50 group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-[0.85] transition-[transform,filter] duration-1000"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
 

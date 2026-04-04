@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   ArrowRight,
   Brain,
@@ -39,7 +40,7 @@ const featured = {
   ],
   tags: ["LLM Agent", "Meta Graph API", "OAuth", "Redis"],
   category: "AI Agents",
-  image: "https://picsum.photos/seed/meta-ads-platform/1200/700",
+  image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/meta-ads.png",
 };
 
 const projects = [
@@ -52,7 +53,7 @@ const projects = [
       "AI-driven sentiment classification, automated lead scoring (hot/warm/cold), domain health verification (SPF/DKIM/DMARC), 14-day warmup scheduler, and unified inbox — backed by 177 automated tests.",
     tags: ["LLM Agent", "SMTP/IMAP", "HMAC Tracking"],
     category: "AI Agents",
-    image: "https://picsum.photos/seed/cold-email-eng/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/cold-email.png",
   },
   {
     icon: Brain,
@@ -63,7 +64,7 @@ const projects = [
       "Deployed agents for support ticket analysis, client health assessment, and automated risk reporting — with BullMQ worker pipelines, Clerk auth, and real-time response streaming.",
     tags: ["Mastra AI", "LangGraph", "Next.js 16"],
     category: "AI Agents",
-    image: "https://picsum.photos/seed/caio-platform/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/caio-platform.png",
   },
   {
     icon: VideoCamera,
@@ -74,7 +75,7 @@ const projects = [
       "Integrated LLM agent via OpenRouter for AI-powered trend analysis, content pattern recognition, and actionable insights on viral video performance.",
     tags: ["YouTube Data API", "OpenRouter", "LLM Agent"],
     category: "Analytics",
-    image: "https://picsum.photos/seed/yt-trends/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/yt-trends.png",
   },
   {
     icon: MagnifyingGlass,
@@ -85,7 +86,7 @@ const projects = [
       "Vector embedding-based semantic search across TikTok, YouTube, and Reddit — consumed by Mastra AI agents for automated storyboard creation. Gemini AI for video classification.",
     tags: ["Redis Queues", "Gemini AI", "Bunny CDN"],
     category: "AI Agents",
-    image: "https://picsum.photos/seed/scrape-search/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/scrape-search.png",
   },
   {
     icon: ChatCircleDots,
@@ -96,7 +97,7 @@ const projects = [
       "Conversational AI agent ingests full channel context to answer natural language questions about team discussions, surface key topics, and provide source-attributed insights.",
     tags: ["Next.js 15", "OpenRouter", "Real-time"],
     category: "Analytics",
-    image: "https://picsum.photos/seed/discord-intel/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/discord-intel.png",
   },
   {
     icon: Bell,
@@ -107,7 +108,7 @@ const projects = [
       "Classifies bugs vs. feature requests vs. general chat, generates severity-tagged reports, stores in Turso DB, and auto-posts formatted alerts to a dedicated error channel.",
     tags: ["Discord Bot", "LLM Agent", "Turso"],
     category: "Automation",
-    image: "https://picsum.photos/seed/bug-alert/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/bug-alert.png",
   },
   {
     icon: Heartbeat,
@@ -118,7 +119,7 @@ const projects = [
       "AI triage with urgency scoring, sentiment classification, churn signal detection, response quality evaluation, and risk radar scoring across 10+ enriched database tables.",
     tags: ["LLM Agent", "Sentiment AI", "Real-time"],
     category: "AI Agents",
-    image: "https://picsum.photos/seed/client-listener/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/client-listener.png",
   },
   {
     icon: TagChevron,
@@ -129,7 +130,7 @@ const projects = [
       "Categorizes messages (client question, bug report, team response, announcement, spam) and persists enriched structured data for automated support intelligence.",
     tags: ["Whop API", "LLM Classification", "Turso"],
     category: "Automation",
-    image: "https://picsum.photos/seed/whop-classifier/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/whop-classifier.png",
   },
   {
     icon: ChartLineUp,
@@ -140,7 +141,7 @@ const projects = [
       "Two-tier cost-optimized architecture: heuristic pre-filtering at Tier 1, deep-analysis LLM at Tier 2 with rolling context windows — delivering actionable red/yellow/green risk classifications.",
     tags: ["Predictive AI", "Two-tier Agent", "Heuristics"],
     category: "AI Agents",
-    image: "https://picsum.photos/seed/churn-predict/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/churn-predict.png",
   },
   {
     icon: GoogleLogo,
@@ -151,7 +152,7 @@ const projects = [
       "Clients describe tasks in plain English — agent pulls from Sheets, drafts in Gmail, checks Calendar, and logs to Drive. New capabilities auto-ship with Google updates.",
     tags: ["Google Workspace", "AI Agent", "Managed Service"],
     category: "Managed Services",
-    image: "https://picsum.photos/seed/gworkspace-ai/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/google-workspace.png",
   },
   {
     icon: GearSix,
@@ -162,7 +163,7 @@ const projects = [
       "Clients describe automations in plain English. Agent builds the full workflow end-to-end, tests it, deploys it live, and modifies/scales as the business evolves.",
     tags: ["Make.com", "n8n", "AI Agent"],
     category: "Managed Services",
-    image: "https://picsum.photos/seed/auto-builder/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/auto-builder.png",
   },
   {
     icon: Robot,
@@ -173,7 +174,7 @@ const projects = [
       "AI agent handles audience research, campaign creation, copywriting, budget allocation, A/B testing, performance monitoring, kills underperformers, and scales winners autonomously.",
     tags: ["Meta Ads", "AI Agent", "Managed Service"],
     category: "Managed Services",
-    image: "https://picsum.photos/seed/meta-service/800/500",
+    image: "https://jjn46rcnnayepb32.public.blob.vercel-storage.com/thumbnails/meta-service.png",
   },
 ];
 
@@ -239,10 +240,13 @@ export default function ProjectsPage() {
             <section className="mb-24 md:mb-32">
               <div className="group grid md:grid-cols-12 gap-0 overflow-hidden bg-[#131315] border border-white/[0.08]">
                 <div className="md:col-span-7 relative h-[360px] md:h-[500px] overflow-hidden">
-                  <img
+                  <Image
                     src={featured.image}
                     alt={featured.title}
-                    className="w-full h-full object-cover grayscale opacity-50 group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 58vw"
+                    className="object-cover grayscale opacity-50 group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-[#131315] via-transparent to-transparent" />
                 </div>
@@ -310,10 +314,12 @@ export default function ProjectsPage() {
                 <div className="group bg-[#131315] p-8 flex flex-col h-full transition-all duration-500 hover:bg-[#19191b]">
                   {/* Image */}
                   <div className="h-48 mb-8 overflow-hidden bg-black relative">
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover opacity-40 grayscale group-hover:opacity-60 transition-opacity duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover opacity-40 grayscale group-hover:opacity-60 transition-opacity duration-500"
                     />
                     <div className="absolute top-4 left-4">
                       <div className="inline-flex items-center justify-center w-10 h-10 bg-white/[0.06] border border-white/[0.08]">
@@ -373,13 +379,11 @@ export default function ProjectsPage() {
               <div
                 className="pointer-events-none absolute inset-0 opacity-[0.08]"
                 aria-hidden="true"
-              >
-                <img
-                  src="/topo-lines.png"
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='800' height='800' viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 799c43.6 0 87.2-4.1 129.5-12.2C256.4 761.6 373.1 701 480 620c75.3-57 141.2-126.8 196-206 43.6-63 77.2-132.3 100-205C789.7 165.7 797.3 122.9 800 80V0M0 599c30.4 0 60.8-2.3 90.3-6.8 88.5-13.6 170.1-55.9 244.7-112.5C417 416.7 483.5 334.8 544 246c30.1-44.2 55.4-91.4 75.3-141.4 13.7-34.6 23.5-70.3 29.3-104.6H0v600z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+                  backgroundSize: "cover",
+                }}
+              />
               <div
                 className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#131315] via-transparent to-transparent"
                 aria-hidden="true"

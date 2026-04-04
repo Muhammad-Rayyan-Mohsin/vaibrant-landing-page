@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown } from "@phosphor-icons/react";
+import { ArrowDown, ChatCircleDots } from "@phosphor-icons/react";
 
 export function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -35,6 +35,7 @@ export function Hero() {
             muted
             playsInline
             preload="auto"
+            poster="/hero-poster.jpg"
             className="h-full w-full object-cover"
           >
             <source src="https://jjn46rcnnayepb32.public.blob.vercel-storage.com/vortex-walk.mp4" type="video/mp4" />
@@ -62,17 +63,17 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-lg"
           >
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] uppercase -ml-1 md:-ml-1.5">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] uppercase" style={{ marginLeft: "-0.15em" }}>
               Vaibrant
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed">
-              Your business runs on decisions. We build the
-              AI agents that make them — faster, sharper,
-              and at a scale no team can match.
+              Step into the future. We&apos;ll handle the AI —
+              building the agents, automations, and strategies
+              that move your business forward.
             </p>
             <div className="mt-4">
               <span className="text-xs font-mono uppercase tracking-[0.15em] text-white/35">
-                AI Strategy&ensp;|&ensp;Custom Models&ensp;|&ensp;Automation
+                AI Agents&ensp;|&ensp;Workflow Automation&ensp;|&ensp;AI Strategy
               </span>
             </div>
           </motion.div>
@@ -84,12 +85,21 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 1, ease: [0.16, 1, 0.3, 1] }}
             className="absolute bottom-16 md:bottom-20 right-6 md:right-12 lg:right-16"
           >
-            <a
-              href="#contact"
-              className="inline-flex items-center px-10 py-4 text-base font-medium rounded-full bg-white text-black transition-transform duration-200 active:scale-[0.97] hover:bg-white/90"
-            >
-              Get Started
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href="#contact"
+                className="inline-flex items-center px-10 py-4 text-base font-medium rounded-full bg-white text-black transition-transform duration-200 active:scale-[0.97] hover:bg-white/90"
+              >
+                Get Started
+              </a>
+              <a
+                href="/chat"
+                className="inline-flex items-center gap-2 px-5 py-4 text-sm font-medium rounded-full border border-white/20 text-white/70 hover:text-white hover:border-white/40 transition-all duration-200"
+              >
+                <ChatCircleDots size={16} weight="fill" />
+                Ask AI
+              </a>
+            </div>
           </motion.div>
 
           {/* Scroll indicator */}
