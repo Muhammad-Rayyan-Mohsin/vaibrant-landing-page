@@ -1,9 +1,13 @@
 "use client";
 
 import { ArrowRight, ChatCircleDots } from "@phosphor-icons/react";
+import { useState } from "react";
 import { FadeIn } from "./fade-in";
+import { ContactModal } from "./chat/contact-modal";
 
 export function CTA() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <section id="pricing" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
@@ -39,9 +43,9 @@ export function CTA() {
                 automation opportunities, and map out a 90-day AI roadmap for your business.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#contact"
-                  className="group inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium rounded-full bg-foreground text-background transition-transform duration-200 active:scale-[0.97]"
+                <button
+                  onClick={() => setModalOpen(true)}
+                  className="group inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium rounded-full bg-foreground text-background transition-transform duration-200 active:scale-[0.97] cursor-pointer"
                 >
                   Book a Call
                   <ArrowRight
@@ -49,7 +53,7 @@ export function CTA() {
                     weight="bold"
                     className="transition-transform duration-200 group-hover:translate-x-0.5"
                   />
-                </a>
+                </button>
                 <a
                   href="/chat"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border text-foreground transition-colors duration-200 hover:bg-surface"
@@ -62,6 +66,8 @@ export function CTA() {
           </div>
         </FadeIn>
       </div>
+
+      <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 }
