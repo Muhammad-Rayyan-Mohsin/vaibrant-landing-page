@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { ChatFab } from "@/components/chat-fab";
+import { ExitIntentPopup } from "@/components/exit-intent-popup";
 import "./globals.css";
 
 const generalSans = localFont({
@@ -195,6 +196,7 @@ export default function RootLayout({
       <body className="min-h-dvh bg-background text-foreground">
         <SmoothScroll>{children}</SmoothScroll>
         <ChatFab />
+        <ExitIntentPopup />
       </body>
     </html>
   );

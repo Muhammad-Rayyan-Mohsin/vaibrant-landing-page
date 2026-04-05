@@ -8,6 +8,7 @@ import { Projects } from "@/components/projects";
 import { HowItWorks } from "@/components/how-it-works";
 import { CTA } from "@/components/cta";
 import { FAQ } from "@/components/faq";
+import { NewsletterInline } from "@/components/newsletter-inline";
 import { Footer } from "@/components/footer";
 import { ContactModal } from "@/components/chat/contact-modal";
 
@@ -21,6 +22,7 @@ export default function Home() {
       <main>
         <Hero onContact={openContact} />
         <Projects />
+        <NewsletterInline />
         <Features />
         <HowItWorks />
         <CTA onContact={openContact} />
