@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="text-white/80">
               Vaibrant Agency<br />
-              Email: privacy@vaibrant.agency<br />
+              Email: info@vaibrant.co<br />
               Website: vaibrant.agency
             </p>
           </div>
@@ -196,7 +196,7 @@ export default function PrivacyPolicyPage() {
             9. AI and Automated Decision-Making
           </h2>
           <p>Vaibrant uses AI across its services — AI agents, content generation, campaign optimization, and workflow automation. All AI features provide recommendations that require human review and approval. No decisions with legal or similarly significant effects are made solely by automated means.</p>
-          <p>You have the right to human intervention, to express your point of view, and to contest any automated recommendation. Contact privacy@vaibrant.agency to exercise these rights.</p>
+          <p>You have the right to human intervention, to express your point of view, and to contest any automated recommendation. Contact info@vaibrant.co to exercise these rights.</p>
         </section>
 
         <section className="space-y-4">
@@ -225,7 +225,7 @@ export default function PrivacyPolicyPage() {
             13. Contact Us
           </h2>
           <div className="bg-surface border border-border/50 rounded-xl p-5 space-y-2">
-            <p className="text-white/80"><strong>Email:</strong> privacy@vaibrant.agency</p>
+            <p className="text-white/80"><strong>Email:</strong> info@vaibrant.co</p>
             <p className="text-white/80"><strong>Organization:</strong> Vaibrant Agency</p>
             <p className="text-white/80"><strong>Website:</strong> vaibrant.agency</p>
           </div>

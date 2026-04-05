@@ -66,7 +66,7 @@ export default function LegalLayout({
               reserved.
             </p>
             <p className="text-[10px] font-mono text-muted/50">
-              privacy@vaibrant.agency
+              info@vaibrant.co
             </p>
           </div>
         </div>

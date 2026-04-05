@@ -124,7 +124,7 @@ export default function TermsPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-bold tracking-tight text-foreground">14. Contact</h2>
           <div className="bg-surface border border-border/50 rounded-xl p-5">
-            <p className="text-white/80">Questions: <strong>legal@vaibrant.agency</strong></p>
+            <p className="text-white/80">Questions: <strong>info@vaibrant.co</strong></p>
             <p className="text-white/80 mt-1">Vaibrant Agency &middot; vaibrant.agency</p>
           </div>
         </section>

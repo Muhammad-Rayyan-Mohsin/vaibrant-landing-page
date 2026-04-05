@@ -91,7 +91,7 @@ export default function SecurityPage() {
 
         <section className="space-y-4">
           <h2 className="text-xl font-bold tracking-tight text-foreground">8. Vulnerability Disclosure</h2>
-          <p>Discovered a vulnerability? Report it to <strong className="text-white/90">security@vaibrant.agency</strong>.</p>
+          <p>Discovered a vulnerability? Report it to <strong className="text-white/90">info@vaibrant.co</strong>.</p>
           <ul className="list-disc list-inside space-y-1 ml-2">
             <li>Acknowledgment within 48 hours</li>
             <li>Resolution timeline within 5 business days</li>
@@ -103,8 +103,8 @@ export default function SecurityPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-bold tracking-tight text-foreground">9. Contact</h2>
           <div className="bg-surface border border-border/50 rounded-xl p-5 space-y-2">
-            <p className="text-white/80"><strong>Security:</strong> security@vaibrant.agency</p>
-            <p className="text-white/80"><strong>Privacy:</strong> privacy@vaibrant.agency</p>
+            <p className="text-white/80"><strong>Security:</strong> info@vaibrant.co</p>
+            <p className="text-white/80"><strong>Privacy:</strong> info@vaibrant.co</p>
           </div>
         </section>
       </div>

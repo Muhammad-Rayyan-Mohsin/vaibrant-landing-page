@@ -54,7 +54,7 @@ export default function DataDeletionPage() {
                 <span className="w-7 h-7 rounded-full bg-white/[0.06] flex items-center justify-center text-xs font-bold">2</span>
                 <h3 className="text-base font-semibold text-foreground">Email Request</h3>
               </div>
-              <p>Email <strong className="text-white/90">privacy@vaibrant.agency</strong> with subject &quot;Data Deletion Request,&quot; your name, account email, and whether you want full deletion or specific categories.</p>
+              <p>Email <strong className="text-white/90">info@vaibrant.co</strong> with subject &quot;Data Deletion Request,&quot; your name, account email, and whether you want full deletion or specific categories.</p>
             </div>
 
             <div className="bg-surface border border-border/50 rounded-2xl p-6">
@@ -102,7 +102,7 @@ export default function DataDeletionPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-bold tracking-tight text-foreground">Questions</h2>
           <div className="bg-surface border border-border/50 rounded-xl p-5">
-            <p className="text-white/80">Contact: <strong>privacy@vaibrant.agency</strong></p>
+            <p className="text-white/80">Contact: <strong>info@vaibrant.co</strong></p>
             <p className="text-white/60 mt-2 text-xs">See also: <Link href="/data-rights" className="text-foreground underline underline-offset-4">Your Data Rights</Link> · <Link href="/privacy" className="text-foreground underline underline-offset-4">Privacy Policy</Link></p>
           </div>
         </section>

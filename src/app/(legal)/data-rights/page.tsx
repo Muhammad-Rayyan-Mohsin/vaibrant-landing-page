@@ -33,7 +33,7 @@ export default function DataRightsPage() {
           <p>Depending on your location, you have specific rights regarding your personal data. This page explains each right and how to exercise it.</p>
           <div className="bg-surface border border-border/50 rounded-xl p-5">
             <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted mb-2">How to Submit a Request</p>
-            <p className="text-white/80">Email <strong>privacy@vaibrant.agency</strong> with your name, account email, and the right you wish to exercise. We verify identity before processing.</p>
+            <p className="text-white/80">Email <strong>info@vaibrant.co</strong> with your name, account email, and the right you wish to exercise. We verify identity before processing.</p>
             <p className="text-white/60 mt-2 text-xs">Response within 30 days (extendable by 60 days for complex requests).</p>
           </div>
         </section>

@@ -74,7 +74,7 @@ export default function AcceptableUsePage() {
 
         <section className="space-y-4">
           <h2 className="text-xl font-bold tracking-tight text-foreground">7. Reporting</h2>
-          <p>Report violations to <strong className="text-white/90">abuse@vaibrant.agency</strong>.</p>
+          <p>Report violations to <strong className="text-white/90">info@vaibrant.co</strong>.</p>
         </section>
       </div>
     </article>

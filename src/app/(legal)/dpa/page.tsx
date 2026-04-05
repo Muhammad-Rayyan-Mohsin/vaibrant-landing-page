@@ -93,7 +93,7 @@ export default function DPAPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-bold tracking-tight text-foreground">12. Contact</h2>
           <div className="bg-surface border border-border/50 rounded-xl p-5">
-            <p className="text-white/80">DPA inquiries: <strong>privacy@vaibrant.agency</strong></p>
+            <p className="text-white/80">DPA inquiries: <strong>info@vaibrant.co</strong></p>
             <p className="text-white/60 mt-1 text-xs">To execute a signed copy, contact us at the address above.</p>
           </div>
         </section>

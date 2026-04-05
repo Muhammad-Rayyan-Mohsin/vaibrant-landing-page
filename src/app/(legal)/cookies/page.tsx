@@ -102,7 +102,7 @@ export default function CookiePolicyPage() {
 
         <section className="space-y-4">
           <h2 className="text-xl font-bold tracking-tight text-foreground">7. Contact</h2>
-          <p>Questions about cookies: <strong className="text-white/90">privacy@vaibrant.agency</strong></p>
+          <p>Questions about cookies: <strong className="text-white/90">info@vaibrant.co</strong></p>
         </section>
       </div>
     </article>
