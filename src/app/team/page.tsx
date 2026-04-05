@@ -140,6 +140,19 @@ export default function TeamPage() {
           </div>
         </section>
 
+        {/* Cross-link to projects */}
+        <section className="mx-auto max-w-[1400px] px-6 md:px-12 pb-16">
+          <FadeIn>
+            <a
+              href="/projects"
+              className="inline-flex items-center gap-2 text-muted hover:text-foreground text-sm transition-colors duration-200"
+            >
+              See what we&apos;ve built
+              <ArrowRight size={14} weight="bold" />
+            </a>
+          </FadeIn>
+        </section>
+
         {/* CTA */}
         <section className="w-full bg-[#0e0e0e] py-32 border-t border-white/[0.06] overflow-hidden relative">
           <div className="mx-auto max-w-[1400px] px-6 md:px-12 flex flex-col md:flex-row items-center justify-between relative z-10">

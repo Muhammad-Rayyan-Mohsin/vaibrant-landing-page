@@ -157,6 +157,36 @@ export default function RootLayout({
                     },
                   ],
                 },
+                {
+                  "@type": "Service",
+                  "@id": "https://vaibrant.agency/#service-ai-agents",
+                  name: "Autonomous AI Agents",
+                  provider: { "@id": "https://vaibrant.agency/#organization" },
+                  serviceType: "AI Agent Development",
+                  description:
+                    "Custom LLM-powered agents that plug into your stack and operate independently — managing ad campaigns, triaging support tickets, classifying data, scoring leads, and executing multi-step workflows with 40+ tools.",
+                  areaServed: "Worldwide",
+                },
+                {
+                  "@type": "Service",
+                  "@id": "https://vaibrant.agency/#service-automation",
+                  name: "Workflow & Platform Automation",
+                  provider: { "@id": "https://vaibrant.agency/#organization" },
+                  serviceType: "Business Process Automation",
+                  description:
+                    "End-to-end automation across Make.com, n8n, OpenClaw, and Google Workspace. Describe what you need in plain English — our AI agent builds the workflow, tests it, and deploys it live.",
+                  areaServed: "Worldwide",
+                },
+                {
+                  "@type": "Service",
+                  "@id": "https://vaibrant.agency/#service-intelligence",
+                  name: "Data Intelligence & Growth",
+                  provider: { "@id": "https://vaibrant.agency/#organization" },
+                  serviceType: "AI Strategy & Data Analytics",
+                  description:
+                    "Systems that monitor, classify, and act on your data in real time — from social media analytics and content trend detection to predictive churn scoring and automated outreach engines.",
+                  areaServed: "Worldwide",
+                },
               ],
             }),
           }}

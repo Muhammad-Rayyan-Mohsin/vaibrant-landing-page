@@ -5,7 +5,9 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { Features } from "@/components/features";
 import { Projects } from "@/components/projects";
+import { HowItWorks } from "@/components/how-it-works";
 import { CTA } from "@/components/cta";
+import { FAQ } from "@/components/faq";
 import { Footer } from "@/components/footer";
 import { ContactModal } from "@/components/chat/contact-modal";
 
@@ -20,7 +22,9 @@ export default function Home() {
         <Hero onContact={openContact} />
         <Projects />
         <Features />
+        <HowItWorks />
         <CTA onContact={openContact} />
+        <FAQ />
       </main>
       <Footer />
       <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
