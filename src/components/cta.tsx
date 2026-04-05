@@ -1,15 +1,15 @@
 "use client";
 
 import { ArrowRight, ChatCircleDots } from "@phosphor-icons/react";
-import { useState } from "react";
 import { FadeIn } from "./fade-in";
-import { ContactModal } from "./chat/contact-modal";
 
-export function CTA() {
-  const [modalOpen, setModalOpen] = useState(false);
+interface CTAProps {
+  onContact?: () => void;
+}
 
+export function CTA({ onContact }: CTAProps) {
   return (
-    <section id="pricing" className="relative py-24 md:py-32">
+    <section id="cta" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <FadeIn>
           <div className="relative rounded-[2.5rem] border border-border/50 bg-surface/30 p-10 md:p-16 lg:p-20 overflow-hidden">
@@ -31,7 +31,7 @@ export function CTA() {
 
             <div className="relative z-10 max-w-xl">
               <span className="text-xs font-mono uppercase tracking-widest text-muted">
-                Let&apos;s talk
+                Your move
               </span>
               <h2 className="mt-4 text-3xl md:text-5xl font-semibold tracking-tighter leading-tight">
                 Your AI
@@ -39,12 +39,13 @@ export function CTA() {
                 advantage starts here.
               </h2>
               <p className="mt-6 text-base text-muted leading-relaxed max-w-[45ch]">
-                Book a free strategy call. We&apos;ll audit your workflows, identify
-                automation opportunities, and map out a 90-day AI roadmap for your business.
+                Book a free 30-minute strategy call. We&apos;ll audit your workflows, identify
+                your top 3 automation opportunities, and map a 90-day AI roadmap.
+                We take on 3 new clients per month.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => setModalOpen(true)}
+                  onClick={onContact}
                   className="group inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium rounded-full bg-foreground text-background transition-transform duration-200 active:scale-[0.97] cursor-pointer"
                 >
                   Book a Call
@@ -66,8 +67,6 @@ export function CTA() {
           </div>
         </FadeIn>
       </div>
-
-      <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 }

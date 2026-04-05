@@ -1,17 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import { List, X } from "@phosphor-icons/react";
 
 const navLinks = [
   { label: "Projects", href: "/projects" },
   { label: "Team", href: "/team" },
-  { label: "Contact", href: "/#contact" },
-  { label: "Chat", href: "/chat" },
 ];
 
-export function Navbar() {
+interface NavbarProps {
+  onContact?: () => void;
+}
+
+export function Navbar({ onContact }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const { scrollY } = useScroll();
@@ -53,6 +55,12 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
+              <button
+                onClick={onContact}
+                className="px-4 py-1.5 text-[13px] font-medium rounded-full bg-white text-black hover:bg-white/90 transition-colors duration-200 ml-1"
+              >
+                Book a Call
+              </button>
             </div>
 
             {/* Mobile toggle */}
@@ -88,6 +96,15 @@ export function Navbar() {
                       {link.label}
                     </a>
                   ))}
+                  <button
+                    onClick={() => {
+                      setMobileOpen(false);
+                      onContact?.();
+                    }}
+                    className="mx-3 mt-2 py-2.5 text-sm font-medium rounded-xl bg-white text-black hover:bg-white/90 transition-colors"
+                  >
+                    Book a Call
+                  </button>
                 </div>
               </motion.div>
             )}

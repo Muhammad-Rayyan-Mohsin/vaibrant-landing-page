@@ -1,22 +1,16 @@
-const footerLinks = {
-  Services: ["AI Strategy", "Custom Models", "Automation", "Integration"],
-  Company: ["About", "Case Studies", "Blog", "Careers"],
-  Legal: ["Privacy", "Terms", "Security"],
-};
-
 export function Footer() {
   return (
     <footer id="contact" className="border-t border-border/50 py-16 md:py-20">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Brand */}
-          <div className="md:col-span-4">
-            <span className="text-lg font-semibold tracking-tight">
+          <div className="md:col-span-5">
+            <a href="/" className="text-lg font-semibold tracking-tight hover:text-muted transition-colors duration-200">
               vaibrant
-            </span>
-            <p className="mt-4 text-sm text-muted leading-relaxed max-w-[30ch]">
-              AI services agency building intelligent systems that
-              drive measurable business outcomes.
+            </a>
+            <p className="mt-4 text-sm text-muted leading-relaxed max-w-[34ch]">
+              AI services agency. 13 production systems deployed.
+              Zero still in beta.
             </p>
             <a
               href="/chat"
@@ -27,26 +21,53 @@ export function Footer() {
             </a>
           </div>
 
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category} className="md:col-span-2">
-              <span className="text-xs font-mono uppercase tracking-widest text-muted">
-                {category}
-              </span>
-              <ul className="mt-4 flex flex-col gap-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-muted transition-colors duration-200 hover:text-foreground"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Navigation */}
+          <div className="md:col-span-2">
+            <span className="text-xs font-mono uppercase tracking-widest text-muted">
+              Pages
+            </span>
+            <ul className="mt-4 flex flex-col gap-3">
+              <li>
+                <a href="/projects" className="text-sm text-muted transition-colors duration-200 hover:text-foreground">
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a href="/team" className="text-sm text-muted transition-colors duration-200 hover:text-foreground">
+                  Team
+                </a>
+              </li>
+              <li>
+                <a href="/chat" className="text-sm text-muted transition-colors duration-200 hover:text-foreground">
+                  AI Chat
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="md:col-span-3">
+            <span className="text-xs font-mono uppercase tracking-widest text-muted">
+              Contact
+            </span>
+            <ul className="mt-4 flex flex-col gap-3">
+              <li>
+                <a
+                  href="https://calendly.com/vaibrant/strategy-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted transition-colors duration-200 hover:text-foreground"
+                >
+                  Book a Strategy Call
+                </a>
+              </li>
+              <li>
+                <a href="mailto:hello@vaibrant.agency" className="text-sm text-muted transition-colors duration-200 hover:text-foreground">
+                  hello@vaibrant.agency
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom bar */}
@@ -54,26 +75,6 @@ export function Footer() {
           <span className="text-xs text-muted">
             2026 Vaibrant. All rights reserved.
           </span>
-          <div className="flex items-center gap-6">
-            <a
-              href="#"
-              className="text-xs text-muted transition-colors hover:text-foreground"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="#"
-              className="text-xs text-muted transition-colors hover:text-foreground"
-            >
-              Twitter
-            </a>
-            <a
-              href="#"
-              className="text-xs text-muted transition-colors hover:text-foreground"
-            >
-              YouTube
-            </a>
-          </div>
         </div>
       </div>
     </footer>

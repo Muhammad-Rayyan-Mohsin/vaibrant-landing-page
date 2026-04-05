@@ -60,7 +60,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="about" className="relative pt-0 pb-24 md:pb-32 overflow-hidden">
+    <section id="work" className="relative pt-0 pb-24 md:pb-32 overflow-hidden">
       {/* Top fade — blends from hero */}
       <div className="pointer-events-none absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-background to-transparent z-20" />
       {/* Bottom fade — blends into next section */}

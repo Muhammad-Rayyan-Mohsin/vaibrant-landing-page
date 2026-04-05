@@ -28,16 +28,16 @@ export function Features() {
         <ScrollReveal>
           <div className="mb-16 md:mb-24">
             <span className="inline-block px-3 py-1 mb-6 bg-white/[0.04] text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-foreground border border-white/[0.06]">
-              Capabilities&ensp;|&ensp;Intelligence
+              What We Build
             </span>
             <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none mb-8">
-              ADVANCED
+              THREE SYSTEMS.
               <br />
-              ARCHITECTURES.
+              ZERO BUSYWORK.
             </h2>
             <p className="text-lg md:text-xl text-muted font-light leading-relaxed max-w-2xl">
-              We engineer the cognitive infrastructure your business needs to operate
-              at scale. Our systems don&apos;t just assist — they decide, act, and adapt.
+              We build the AI systems your business needs to run faster with fewer
+              people. Our systems don&apos;t just assist — they execute, act, and adapt in real time.
             </p>
           </div>
         </ScrollReveal>
@@ -166,15 +166,15 @@ export function Features() {
                   </div>
                   <div className="rounded-xl bg-white/[0.03] border border-white/[0.06] p-5">
                     <div className="text-2xl md:text-3xl font-bold font-mono tracking-tight text-foreground mb-1">5</div>
-                    <div className="text-[10px] uppercase tracking-widest text-muted/60">Platforms covered</div>
+                    <div className="text-[10px] uppercase tracking-widest text-muted/60">Channels, 1 dashboard</div>
                   </div>
                   <div className="rounded-xl bg-white/[0.03] border border-white/[0.06] p-5">
                     <div className="text-2xl md:text-3xl font-bold font-mono tracking-tight text-foreground mb-1">0-100</div>
-                    <div className="text-[10px] uppercase tracking-widest text-muted/60">Churn risk scores</div>
+                    <div className="text-[10px] uppercase tracking-widest text-muted/60">Predict churn early</div>
                   </div>
                   <div className="rounded-xl bg-white/[0.03] border border-white/[0.06] p-5">
                     <div className="text-2xl md:text-3xl font-bold font-mono tracking-tight text-foreground mb-1">Real-time</div>
-                    <div className="text-[10px] uppercase tracking-widest text-muted/60">Signal processing</div>
+                    <div className="text-[10px] uppercase tracking-widest text-muted/60">Act in seconds, not days</div>
                   </div>
                 </div>
               </div>

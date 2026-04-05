@@ -9,8 +9,8 @@ import { FadeIn } from "@/components/fade-in";
 const team = [
   {
     name: "Muhammad Rayyan Mohsin",
-    role: "Head of Neural Architectures",
-    focus: "Generative Logic & Ethics",
+    role: "Co-Founder & Lead AI Engineer",
+    focus: "LLM Agents & AI Systems",
     link: "https://portfolio-rayyan-opal.vercel.app/",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBcoQ4pQog_VLAWJAIPsHTTXciWKlkpB_zCq4vSdN2X-i06HRzszi2BiIQ6RHjwMJFB-8VCx8NCbE25n8Z6l9deP4ULuD1GNdNvOeWppUrGlf4ZdRyGuBIqNaUSi_UTdhmz1yt79PuhNGfuNyNezZbg1vuCQpYPu1g8ITOFsg5qqoLH-LBr77IgGPfnV-S40C01UK0JW7305BR57O5l2rgGCRD61plgQABRqXPObHrG9QNAqObYnUSadUCFSvev_493m9dcwVsY8g0",
@@ -18,24 +18,24 @@ const team = [
   },
   {
     name: "Usman Abbas",
-    role: "Lead Systems Designer",
-    focus: "Recursive Optimization",
+    role: "Co-Founder & Systems Architect",
+    focus: "Platform Architecture & Automation",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBi3Kk_YDeCTAIevUwhYScL2MkVGz8J43FkHsJiGyBxIE-7Rk6rglWRweSk27mJbn3HGwmTLuiF5FJA_mDEhWW7Sb1aJmQFfYPTydeNJaL3jJx_pLK1lKs8PPb2ahwjon8vEssjVX3KjpCYJn33Vehy13qKSUQWJmjGRwHw_oWfOZ3_3dFI0W54gOBnvVDYNC3ZGT21eNrCgimEvozph3E8p50uQ43GUn1NkxEw3nPMBWcgysE0Nz3fdGeSFDJpFTu1cdabXg_YVic",
     offset: true,
   },
   {
     name: "Abdullah Nadeem",
-    role: "Director of Cognitive Strategy",
-    focus: "Synthetic Humanics",
+    role: "Co-Founder & AI Strategist",
+    focus: "AI Strategy & Client Success",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAIzHI4gL9dQUyfdsixd3nus4hnKQNUyHy2CBSvQyJs102COpyIcR026u_kLt0RPe8PfU80oRSsLE6TvHdBTmm6pveu-nBDFo-VGy4C0GoGDQ3EiOWwjrksI9pkcPKMCY4vTXSF_U-WL18907KWyc_4zYhKc1zVrz5ACk0BDGyk2suPdGGGFos1MZ0_B8OCnXv7JJuINLY9KBqQBiKvD2Z2Ee-9o9hzQHGhs3phG-2x1EOEWfGimcm6A8NECyppQ9G7-cBbofrdKrw",
     offset: false,
   },
   {
     name: "Haider Farooq",
-    role: "Principal AI Ethicist",
-    focus: "Algorithmic Accountability",
+    role: "Co-Founder & Operations Lead",
+    focus: "AI Ops & Quality Assurance",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuB-8_d7ul2KfG2sjJzbhRtKzkpLwM9zhsLUbyctRatTrWsicRqO5wGgs3i7OgzEfyW1vrzVUGVhrY5kKa4S9b1Y3qZt9ixs1yo4S0YiSQNHgH7TdjaxKmkc-ivPO9CGEbRXlOC1LCykZ89dDgnoQ9DVLgIFul0u3dZTjtTPe9qm5aruRvNjLfhh5FH4Dkq1zYbDdLVPCEWsUqjCcIWtdiNJZcszsNHd1vZJ8hJIv-bBhvFDJRlZJRK5ABimblUCj-PexxbRyJFJb_c",
     offset: true,
@@ -66,13 +66,13 @@ export default function TeamPage() {
                   Our Foundation
                 </span>
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.95] text-foreground mb-8">
-                  THE COLLECTIVE //{" "}
-                  <span className="text-muted">HUMAN INTELLIGENCE</span>
+                  THE TEAM //{" "}
+                  <span className="text-muted">BUILDING INTELLIGENCE</span>
                 </h1>
                 <p className="text-xl text-muted font-light leading-relaxed">
-                  Meet the architects of the cognitive frontier. A convergence
-                  of neural engineers, ethicists, and theorists defining the
-                  next epoch of intelligence.
+                  Meet the team behind the systems. Engineers, strategists, and
+                  builders who&apos;ve shipped 13 production AI systems for
+                  companies across industries.
                 </p>
               </div>
             </div>
@@ -145,20 +145,20 @@ export default function TeamPage() {
           <div className="mx-auto max-w-[1400px] px-6 md:px-12 flex flex-col md:flex-row items-center justify-between relative z-10">
             <FadeIn>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-foreground mb-12 md:mb-0">
-                READY TO TRANSCEND?
+                READY TO BUILD TOGETHER?
               </h2>
             </FadeIn>
             <FadeIn delay={0.15}>
               <div className="flex flex-col items-center md:items-end gap-6">
                 <p className="text-muted max-w-sm text-center md:text-right text-sm leading-relaxed">
-                  Our collective is expanding. We are seeking the next
-                  generation of cognitive architects.
+                  We&apos;re growing the team. If you ship production AI and
+                  want to work on real deployments, let&apos;s talk.
                 </p>
                 <a
-                  href="/#contact"
+                  href="mailto:hello@vaibrant.agency"
                   className="group inline-flex items-center gap-4 bg-foreground text-background px-10 py-5 rounded-full text-xs font-semibold uppercase tracking-widest hover:scale-105 transition-transform duration-300 active:scale-[0.97]"
                 >
-                  View Open Briefs
+                  Join the Team
                   <ArrowRight
                     size={16}
                     weight="bold"

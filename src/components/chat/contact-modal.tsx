@@ -211,7 +211,7 @@ export function ContactModal({ open, onClose }: ContactModalProps) {
                         </div>
                       </button>
 
-                      {/* Email & WhatsApp — external links */}
+                      {/* Email — external link */}
                       {contactOptions.map((opt) => (
                         <a
                           key={opt.label}

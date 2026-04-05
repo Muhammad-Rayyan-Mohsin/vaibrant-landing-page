@@ -2,9 +2,13 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, ChatCircleDots } from "@phosphor-icons/react";
+import { ChatCircleDots } from "@phosphor-icons/react";
 
-export function Hero() {
+interface HeroProps {
+  onContact?: () => void;
+}
+
+export function Hero({ onContact }: HeroProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -36,6 +40,7 @@ export function Hero() {
             playsInline
             preload="metadata"
             poster="/hero-poster.jpg"
+            aria-label="Abstract visualization of AI systems"
             className="h-full w-full object-cover"
           >
             <source src="https://jjn46rcnnayepb32.public.blob.vercel-storage.com/vortex-walk.mp4" type="video/mp4" />
@@ -65,20 +70,21 @@ export function Hero() {
           >
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] uppercase" style={{ marginLeft: "-0.15em" }}>
               Vaibrant
+              <span className="sr-only"> — AI Agents, Automation & Strategy Agency</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed">
-              Step into the future. We&apos;ll handle the AI —
-              building the agents, automations, and strategies
-              that move your business forward.
+              Your competitors are already automating. We build the AI agents,
+              automations, and systems that cut your costs, save your team hours,
+              and scale what&apos;s working.
             </p>
             <div className="mt-4">
               <span className="text-xs font-mono uppercase tracking-[0.15em] text-white/35">
-                AI Agents&ensp;|&ensp;Workflow Automation&ensp;|&ensp;AI Strategy
+                Autonomous AI Agents&ensp;|&ensp;End-to-End Automation&ensp;|&ensp;90-Day Deployment
               </span>
             </div>
           </motion.div>
 
-          {/* Get Started — bottom right */}
+          {/* CTA buttons — bottom right */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,12 +92,12 @@ export function Hero() {
             className="absolute bottom-16 md:bottom-20 right-6 md:right-12 lg:right-16"
           >
             <div className="flex items-center gap-3">
-              <a
-                href="#contact"
+              <button
+                onClick={onContact}
                 className="inline-flex items-center px-10 py-4 text-base font-medium rounded-full bg-white text-black transition-transform duration-200 active:scale-[0.97] hover:bg-white/90"
               >
-                Get Started
-              </a>
+                Book Free Strategy Call
+              </button>
               <a
                 href="/chat"
                 className="inline-flex items-center gap-2 px-5 py-4 text-sm font-medium rounded-full border border-white/20 text-white/70 hover:text-white hover:border-white/40 transition-all duration-200"
@@ -101,23 +107,6 @@ export function Hero() {
               </a>
             </div>
           </motion.div>
-
-          {/* Scroll indicator */}
-          <motion.a
-            href="#features"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.2 }}
-            className="pointer-events-auto absolute bottom-6 right-6 md:right-12 lg:right-16 flex items-center gap-2 text-white/40 hover:text-white/70 transition-colors duration-200"
-          >
-            <span className="text-xs font-mono uppercase tracking-widest">Scroll</span>
-            <motion.div
-              animate={{ y: [0, 4, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <ArrowDown size={14} weight="bold" />
-            </motion.div>
-          </motion.a>
         </motion.div>
       </div>
     </div>
